@@ -1,0 +1,74 @@
+----------------------Identifire-> 
+A name in java programme is called idintifire which can use for idintifcation purpose it can be method or variable name ,class name,or labal name
+
+  1.the only allow charature in java Identifire are a  to z, A to Z , 0 to 9, $, _ 
+  ex. total_number✅ 
+    tatol#❌
+    123total❌ 
+  2.if are using any other charature we will get compile time error 
+  3.Identifire is con't start number
+  4.java Identifire is case sensitive language
+  java language is treated case senitive  language
+  int number = 10;
+  int Number = 10;
+  5.there is no length limit for java identifire but its not recommended to take too lengthy identifires
+  6.we con't use reserved  words whats identifire
+  int x =10;
+  int if = 20;❌ // if is keyword
+
+  7.all predefind java class or interface name we can use as identifires even though it is valid but it's not good programming pratice bacause it reducesd readbilites
+  int String = 888; ✅ 
+  int Runable = 999; ✅ 
+  System.out.println(String); ✅ 
+  System.out.println(Runable); ✅ 
+
+  total_number✅
+  tatol# ❌ 
+  123tatol ❌ 
+  ca$h ✅
+  _$_$_$_$_$_$_$_$ ✅
+  all@hands ❌ 
+  java2share✅
+  Integer✅
+  Int✅
+  int ❌ 
+
+2.Reserved Word -> in java some words are reserved to represent some meaning or functionality such types of words are called reserved words
+  how many reserved in java -> 53
+  1.  keyword(it is have some functionality)-> (50) 
+    1.Used keyword(48) -> if, else, 
+      ->keyword for data types-> byes,short,char,int,long,float,double,long 
+      ->flow control keyword -> if ,else, switch, case, default, do ,while, for, break, constiune,reutn
+      ->Modifire keyword ->public , private,static,final, abstarct, synchronized, native, volatile,
+      trasient
+      ->key exception Handling-> try,catch,finally,thorw,thorws, assert,
+      ->Class releated keyword-> class, inteface, extends, impliments, package, import
+      -> Object releated keyword -> new instanceof, super, this
+      -> return types keyword -> void 
+      in java return types is mandetaory if method want any things than we have to declear that void return types
+      but c language return types optional and defualt return int 
+    2.Unused keyword(2)-> goto, const
+    used of goto create several problem in old language hence some people banned in java 
+    -> used final instedof const 
+    note:- goto const or Unused keyword and if tryping to used we will compile time error 
+  2.  Reserved Literals(only have values)-> (3)true,  false,null
+  null-> default values of Object reference
+
+  Enum-> we can used enum define a group named constent 
+  ex. enum Month{
+    jan,feb,....dec;
+  }
+
+  Consulusion
+1.all 53 reserved in java constain only lower case alphabet symbols
+2.in java we have only new keyword and no delete keywe
+ beacsue disteraction uselees object responsbilitye of garbeg colletcor
+3. strictfp, assert, enum these keyword new in java 
+ 
+
+
+
+
+
+
+
