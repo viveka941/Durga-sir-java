@@ -67,8 +67,106 @@ A name in java programme is called idintifire which can use for idintifcation pu
  
 
 
+variable 
+1.in java every variable and very exprsion has some types 
+each  and every data types is clearly defined 
+every assigenment should be check by compiler for type compatblili beacsue above resion we can cal consuld storngly types programming language 
+
+java pure object oriented programming language?
+java is not pure whay
+more primitive data types
+
+1.java is not consider pure object oriten programming language beacsue several oops feature are not satisfied java (like->operator overloading , multipule inheritance).
+2.moreover we are depeding on primitive data types which are non objects .
+
+primitive data types -> 8 types
+1.Numeric data type
+  Integeral data types
+      byte ,short , int , long
+  floating point data types
+     float , double
+2.NonNumeric data types
+     char, boolean, 
+
+except boolean and char remains data types consider as sinned data types because we can reprsent both positive and negative numbers 
 
 
+size->
+  byte -> 1 byte ( 8bits )
+  MAX_VALUES -> +127
+  MIN_VALUES -> -128
+  rangr: -128 to 127;
+
+the most significant bit access assign bit
+0 = positive number ->its reprsented directlly in a memory 
+1= negative number -> its represent is tow complex form
+
+ex->
+   byte b= 10; ✅
+   byte b = 127;✅
+   byte b = 128;❌
+   byte b = 10.5;❌
+   byte b = true; ❌
+   byte b = "Durga";❌
+
+   byte is best choice if want you handling data in turms of string either form the file or network within breacket file support from network support byte.
 
 
+SHORT ->(2byte(16bits))  short is very most reilly used data type  in java -32768 to 30768  is 
 
+
+note :char -> 2byte
+
+ null is object reference we con't apply primitive  if you are trying to apply than it is compile time error 
+
+
+ Literals-> a constent values which can assingd variable it called variable Literals ex int x(variable name) = 10(constent value /Literals); 
+
+   int s = 0786;❌
+    int x=0777;✅
+    int x1=0XBeef;✅
+    int x2 = 0XBeer;❌
+    int x3 = 0Xface;✅
+
+    int x=10;✅
+    long l  = 10l;✅
+    int x =10l; ❌ possible loss percisions
+    long l =10;✅
+
+    byte b =10;
+    byte b = 127;
+    byte b 128;❌
+
+    flaot f = 123.567 ; ❌
+    flaot f = 123.456f ;
+    double f = 123.456;
+    double f 123.4567D; 
+    flaot f  = 123.456d; ❌ 
+
+    double d = 0786; ❌ ce: integer number too large
+    double d =0XFace; 
+    double d = 0786.0;
+    double d =0Xface.0❌ 
+    double d = 0777; 
+    we car assing Integeral Literals directlly to flaoting point variable under the integer Literals can be specified either in decimal or octal or hexadecimal
+
+    we can't assign flaoting point Literals to Integeral type 
+    double =10;
+    int x =10.0;❌ loss of percisions
+
+    double d = 1.2e3 etri (1200)
+    flaot d =1.2e3 ; ❌ 
+    flaot f = 1.2e3f; 
+
+    we can specified even in exponcial notion 
+    1.2e3 = 1.2 * 10^3
+            1.2*1000
+            1200
+
+    boolean Literals-> True || false
+        only allowd values true or false 
+        boolean b = true; 
+        boolean b = 0; ❌  incompatible type : int require :boolean
+        boolean b = True; ❌ con't not find symbols
+        boolean b = "true" ; ❌  con't not find symbols
+        
