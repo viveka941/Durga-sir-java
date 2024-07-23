@@ -235,3 +235,748 @@ byte -> shotr
        sout(f); output 10;
 
     
+Introduction
+Array Declaration
+Array Creation
+Array Initialization
+Array Declaration , creation 
+Anonymous Arrays
+Array Element
+Array variable assigenment
+
+
+1.
+Introduction-> 
+Array-> multipule values same types not to be need maultipale variable we can declear with singal memory
+defination -> An Array is index collection fiexd no of homoginious data Element 
+-> the main advantage we can represent huge no of values using singal variable so that readbilites of the improvd . but the main Disadvantage of array is fixed in size that is once we carete an array there is no change of incrse or decrease size base on our requirement hance to used array concept compulsary in size in advace, which may not possible always
+
+Disadvantage ->
+1.Array are fixed in memory
+2.Array can hold homoginious 
+
+One dimensinal declaration->
+int []x;✅
+int x[];✅
+int[] x;✅
+
+int [][] x;
+int[][] x;
+int x[][];
+int[] x[];
+int []x[];
+
+Array Creation ->
+int [] a = new int[4];
+Every array in java is an Object only hence we can create array by using new Operator 
+
+for evey array types crrosponding class are aviable and these class of part of java language and not aviable to the programmer level  
+=>Sout(x.getClass().getName()) // out[[i two D aaray 
+
+Array types       Corressponding class name
+int []      -> [I
+int [][]    -> [[I
+double []   -> [D
+shrot[] -> [S
+byte[] -> [B
+boolean [] -> [Z
+
+
+if the time of array creation comparsalry you should specified size otherwise we will get error
+int [] x = new int[];❌
+int [] x= new int[6];✅
+int [] x = new int[0];✅
+
+if trying to specified array size negative int values than we will get runtime exception saying negativeArraySizeException
+int [] x = new int[-4];❌
+
+int [] x = new int[10];
+int [] x = new int['a'];✅
+byte b  = 20;
+int [] x = new int[b];✅
+int []x = new int[10L];❌
+
+to specified array size to allowed data types are byte short char int if you are trying to specified any other types than will get compile time error 
+
+int []x = new int[2147483647];✅
+
+int []x = new int[2147483648];❌//CE: Integer number too large 
+
+2D Array  = Matrix (Group of row and column)
+2D array creation -> in java 2D array not implimented by using matrix style some people flowlled array of array approach multipuldimesional array creation the main advantage approach is memory utilization imporoved 
+
+int [][][] x = new [2][][];
+x[0]= int[2];
+x[0][0]= new int[1];
+x[0][1]=new int[2];
+x[0][2]=new int[3];
+x[1]=new int[2][2];
+
+diagame=arr is =  |0|1|
+              0=[0|1|2] , 1=[0|1]
+
+which one is true
+int[] a = new int[];❌
+int[] a = new int[3];✅
+int[][] a = new int[][];❌
+int[][] a = new int[3][];✅
+int[][] a = new int[][4];❌
+int[][] a = new int[3][4];✅
+int[][][] a = new int[3][4][5];✅
+int[][][] a = new int[3][4][];✅
+[][][] a = new int[3][][5];❌
+int[][][] a = new int[][4][5];❌
+
+Array Initialization
+one we carete array every array Element by defualts initializer with defauls values
+example-> 
+1.int [] x =new int[3];
+          sout(x) // [I@3w2
+          sout(x[0]) // 0
+
+note->whenever trying to print any reference variable internaly toString methoed will called which is implimented by default to return the String in the fowlling form ->className@hashCode_in_hexadecimalform
+
+2.int [][] x= new int[2][3];  
+            [0|1]
+            [0|0|0] ,[0|0|0]
+  sout(x); [[I@je23
+  sout(x[0]); //[I@19238f
+  sout(x[0][0]); //0
+
+3. int [][] x = new int[2][];
+                [null|null]
+                [   ] // not to be decleare
+   sout(x);//[[I@12
+   sout(x[0]);//null
+   sout(x[0][0]); /RE:nullPointException
+
+note-> if you are trying perforem any operation null  then we will get runtime exception: nullPointException
+
+once we create an array every element by defualt initializer with defaults values if we are not satisifed defualt values then we car override values 
+with our costomized values
+int []x= new int[5];
+        [0|0|0|0|0]
+int x[0]=10;
+int [1] =1;
+int [2] =2;
+int [3] =3;
+int [4] =4;
+int [6]=70; RE:ArrayIndexOutOfBoundsSystem
+int [-6]=80; RE:ArrayIndexOutOfBoundsSystem
+
+Array Declaration Creation and Initialization in a single line ->
+int [] x;
+x = new int[3];
+x[0]=10;
+x[1]=20;
+x[2]=30;
+
+int[] x = {10,20,30};
+char[] ch = {'a','e','i','o'};
+String[] a = {"AB","bd","bds","ds"};
+
+2.                [1|2]
+            [10|20],[30|40|60]
+  int [][]x={{10,20},{30,40,50}};
+
+3.  int[][][] x ={{{10,20,30},{40,50,60}},
+                {{70,80},90,100,110}}
+                             [0|1]
+                   [0|1],              [0|1]
+           [10|20|30],[40,50,60]  [70|80],[90|100|110]
+sout(x[0][1][2])=60
+sout(x[1][0][1])=80
+sout(x[1][0][0])=70
+sout(x[2][0][0])=RE:ArrayIndexOutOfBoundsSystem
+sout(x[1][2][0])=Re:ArrayIndexOutOfBoundsSystem
+sout(x[1][1][1])=100
+sout(x[2][1][0])=RE:ArrayIndexOutOfBoundsSystem
+
+int []x ;
+x={10,20,30};❌ //RE:illegal start expression
+if you decleare multipule line we will get compli tiime error we can define only one line 
+
+length VS length();
+length:
+        int[] x = new int[6];
+        sout(x.length()); //CE: connot find symbol
+                          symbol:method length();
+                          location:class int[]
+
+        sout(x.length); // 6
+    
+    length:is a final variable aplicable for aarays 
+          but not for String Object
+          length variable represent size of array
+
+    String s = "Vivek";
+    sout(s.length); //CE: connot find symbol 
+    sout(s.length());  // 5
+
+  length(); is a final method aplicable for String Objects but not for aarays length() method return number of characture prsent in the string 
+
+String[] s= {"A","AA","bbb"};
+sout(s.length)✅
+sout(s.length());❌
+sout(s[0].length);❌ CE: connot find symbol variable length
+sout(s.[0].length());✅
+
+int[][] x= new int[6][3];
+sout(x.length) // 3;
+
+we can create Anonymous as followes
+new int[]{10,20,30,40};✅
+new int[3]{10,20,30,40};❌
+new int[][]{{10,20},{30,40,50}};✅
+
+while creating Anonymous arrays we con't specified the size otherwise we will get compile time error
+
+we can create multipuldimesional Anonymous array also-> new int[][]{{10,20},{30,40,50}};✅
+
+
+bassed our requirement we can give the name for Anonymous array  then it is no longer Anonymous
+int[] x = new int[]{10,20,30};
+
+in the above example just to called some method an array but ofter complete we are not useing anymore hence for this one time requirement Anonymous array bset choice 
+
+Array Element assigenment :
+Case 1:
+    int[] x = new int[5];
+    x[0]=10;
+    x[1]='a';
+    byte b= 20;
+    x[2]=b;
+    short c =30;
+    x[3]=s;
+    x[4]=10L ; // CE: pericission loss 
+
+  
+byte -> short -> int -> long -> float -> double
+        char  -> int -> long -> float -> double
+
+    note->  in the above case of primitive arrays as array element we can provide any type which can be impleciticly prmoted to declared type
+
+
+  Case 2 :
+  example 1:
+          Object[] a = new Object[10];
+          a[0] = new Object();
+          a[1] = new String("Vivek");
+          a[2] = new Integer(10);
+
+  example 2:
+          Number[] n = new Number[10];
+          n[0] = new Integer[10];
+          n[1] = new double(10,5);
+          n[2] = new String("vivek"); //CE: incompatiable types Found String;
+
+example 3: 
+          Runable[] r = new Runable[10];
+          r[0] = new thread();
+          r[1] = String("Vive");  //CE: incompatiable types Found String Require j.l:Runable; 
+        
+        for interface types array element its implimentations class object allowd 
+
+  
+Array type                 Allowd element types
+primitive Array -> any types which can be impleciticly prmoted to declare types
+Object types Array -> Either declare types or tis child class Object allowd
+Abstract class type Array -> its child class Ojbect are allowd
+Interface typed array -> its implimentations class Object are allowd
+
+
+Array Veriable assigenment :
+int [] x = {10,20,30,40}
+char[] ch = {'a','b','c','d'};
+int[] b =x;  //✅
+int[] c = ch;  //❌ element level are not permoted 
+              CE: incompatiable type found: char[] require int[];
+           // char[] = [C
+           // int[] = [I 
+
+which are permotion will be performed automatically 
+char    -> int✅
+char [] -> int[]❌
+int     -> double✅
+int []  -> double[]❌
+float   -> int ❌
+float[] -> int[]❌
+String  -> Object✅
+String[] -> Object[]✅
+
+but in case of Object types array child class typs array can be prmoted to parent class type array 
+
+String[] A ={"a","b","c"};
+Object[] a = A;✅
+
+CASE 2:
+      int[] a = {10,20,30,40,60};
+      int[] b = {70,80};
+      a = b;✅
+      b = a;✅
+
+ whenever we are assigen one array to another array inter element want be copy just reference variable will reassgined 
+  
+  int[][] a = new int[3][]
+  a[0]  = new int[4][3];  //CE: incompatiable types found : int[][] require: int[];
+  int[0] = 10; //CE: incompatiable types found :int 
+  require int [];
+
+  note -> whenever we are assigen one array to another the dimesion must be matched for example in the place one dimensinal int array we should provide one dimensinal array only
+  if trying to provide any other dimesion then we well get compile time error 
+
+note -> whenever we are assigen one array to another aaray both dimesion and types must be matched but sized are not require to match 
+int a[0] = new int[2];
+
+int [][] a =new int[4][3];  ->5
+a[0] = new int[4];    ->1
+a[1] = new int[2];      ->2
+a = new int[3][2];        ->4
+
+Q. total how many object create ?
+ans. 12
+Q. total how many object eligible for Gargbeg collection ans.8
+
+ Types of variable
+
+type of variable -:
+
+bassed on type of values represent by a variable all variable divided into two types 
+1. primitive variable > con be used primitive values 
+  example ->
+   int x =10
+  
+  reference variable can be used to refer object 
+  Student s = new Student();
+
+division 2->  bassed on position are declare and behaviour all variable divided into three types 
+ 1.Instace variable
+ 2. static variable
+ 3.Local variable
+
+ 1. Instace variable-> if the values a variable is varid form object to Ojbect such type variable are called Instace variable
+ 2. for every Ojbect seperat copy instance object will be created.
+ 3. instance variable should declear within the class directly but outside many method or block or constructore 
+4.instance variable will be created at the time of creationg and destoryd  the scope instance excitly the scope of object
+5. instance variable will be stored in the heap memory is the port of Ojbect
+6.we con't access instance variable directly form static area but we can access by using Ojbect reference , but we access instance variable directly from instance area
+
+ for instance variable jVM will always default values and we are not requirment to fper fomr explicitly
+ or 
+ Instance variables are fields declared within a class but outside any method. They are used to store unique data for each instance of the class. Unlike class variables (static variables), which are shared among all instances, instance variables have distinct values specific to each individual object.
+
+instance variable also known as object level variable are attibutes
+
+class Test{
+  int x =10;
+  public static void main(String[] args){
+    Sout(x); ❌//CE: non-static variable x connot be reference form on static context
+    Test t = new Test();
+    sout(t.x); ✅
+  }
+  public void m1(){
+    sout(x);
+  }
+
+
+}
+
+class test{
+  int x;
+  double d;
+  boolean b;
+  String s;
+  public static void main(String[] args){
+    Test t1 = new Test();
+    sout(t1.x); // 0
+    sout((t1.d)); // 0
+    sout(t1.b) ; //false;
+    sout(t1.s); // null
+  }
+}
+ 
+
+**Static variable ->
+class Student{
+  String name;
+  int rollNo;
+static String sName;
+}
+
+if ststic values of variable createing one copy and share all object;
+1. if the values of a variable is not varid object ot Ojbect then it's not Recommended to declare variable as instance variable we have decleare such types variable at class level by using static modifire .
+
+2. In the case of instance variable for every object seperat copy will be created but in the case of static variable a singal copy will be created at the class level and share bye every object of the class
+
+3.static variable should be declare wihtin the class directly but outside any block or method or constructore 
+
+4. static variable will be created at the time of class loading and destoryd at the time class unloading hence scope of static variable is excitly same as scope of dot class file 
+
+Process:
+Java Test <-
+1.Start jVM
+2.create & start main Thread
+3.Locate Test class file
+4.Load Test.class  //static variable is creation 
+5.Excute main() methods
+6. Unload Test class // static variable is destoryd
+7.Terminate main Thread
+8.Shut down jVM
+
+static variable stored in Method are 
+
+class Test{
+  static int x =10;
+  public static void main(String args[]){
+    Test A = new Test();
+    sout(t.x); ✅ // readbility dowon 
+    sout(Test.x);✅ 
+    sout(x);✅
+  }
+}
+
+we can access static variable either by Ojbect reference or class name but Recommended to used class name 
+
+within the same class it is not require to used to class name and we can access directly
+class Test{
+  static int x =10;
+  public static void main(String args[]){
+    Test A = new Test();
+    sout(x);✅
+ }
+
+public class StaticVariable{
+  static int x =10;
+  public static void main(String[] args) {
+    StaticVariable s = new StaticVariable();
+    s.m1();
+  }
+  public void m1(){
+    System.out.println(x);
+  }
+}
+
+
+we can access static variable directly form both instance and static areas 
+
+public class static2 {
+  static int x;
+  static double d ;
+  static String s;
+  public static void main(String[] args) {
+    System.out.println(x); //0
+    System.out.println(d); // 0.0
+    System.out.println(s); // null
+  }
+}
+
+
+for static variable jVM provide default values and we are not require to perform iniliaztion explicitly
+
+static variable also known as class level variables or Fields 
+
+class Test {
+  static int x = 10;
+  int y = 20;
+
+  public static void main(String args[]){
+    Test t = new Test();
+    t.x=888;
+    t.y=999;
+    Test t2 = new Test();
+    System.out.println(t.x +" " + t2.y); // 888 20
+  }
+}
+
+
+
+**Local Variable  
+  1. some times to meet temporary requirment of the progrmmer we can decleare variables inside a method or block or constructore such types of variable are called local variable or temporary variable or stack variable or automatic variables
+
+  2. local variable will be stored inside stack memory
+  3.local variable will be created while excuting the blcok in which declare it 
+  4. onece block excution compelete automatically local variable will be destoryd hence the scope of local is blcok in which declare it 
+
+  5. 
+  public class LocalVariable{
+    public static void main(String[] args) {
+      int i=0; {
+        for (int j=0; j<3; j++){
+          i+=j;
+        }
+        System.out.println(i+" "+j);❌ // connot file symbol variable j 
+      }
+    }
+  }
+
+  for local variable jVM own to provide default values compersulry we should perform iniliaztion explicitly
+
+  class test{
+    public static void main(String args[]){
+      int x =0;
+      sout("hello");
+    }
+  }
+
+  class Test{
+    public static void main(String args[]){
+      int x;
+      sout(x);❌ // CE: x might be not have 
+    }
+  }
+
+
+
+  before using that variable that is if we are not using then it not require to perform iniliaztion
+
+  public class LocalVar2 {
+    public static void main(String[] args) {
+      int x;
+      if(args.length>0){
+        x=10;
+      }
+      System.out.println(x); ❌//CE:error: variable x might not have been initialized
+    }
+  }
+
+  public class LocalVar2 {
+    public static void main(String[] args) {
+      int x;
+      if(args.length>0){
+        x=10;
+      }else{
+        x=20;
+      }
+      System.out.println(x);✅
+    }
+  }
+
+  note: 
+  1.it is not Recommended to perform iniliaztion for local variable inside logical blcoks becuase there is no garentee for the excution of these block always at run time 
+  2.it is highily Recommended to perform iniliaztion for local variables at the time of declartion at least with default values
+  3.
+
+  class Test{
+    int x =10;  public ,private,default,protect
+  }
+
+  the only applicable modifire for the local variable is final by mistake if trying to apply any other midifire then we will get compile time error 
+
+  public class localAccesModifire {
+    public static void main(String[] args) {
+      public int a=10;❌ // illegal start of experssion
+      private int x = 10;❌
+      protected int b=10;❌
+      static int c =10;❌
+      transient int x=10;❌
+      volatile int d=10;❌
+      final int f =10;✅
+    }
+  }
+
+
+
+  class Test{
+    int x=10;
+    static int  y=10;
+    public static void main(String args[]){
+      x 
+    }
+  }
+  note: if we are not declare with any modifire then by default it is default but this rule is applicable only for instance and static variable but not for local variables 
+
+  summary conculsion 
+  1.for instance and static variable jVM will provide default values and we are not require perform iniliaztion explicitly but for local variable jvm want provide default values compersulry we should perform iniliaztion explicitly before using that variable
+  2. instance and static variable can be access by multiple therad simulteniously and hence these are not thread safe but in the case of local variable for every thread seperat copy will created and hence local variable thread safe 
+
+  **thead -> Thread safety in java is the process to make our program safe to use in multithreaded environment, there are different ways through which we can make our program thread safe. Synchronization is the easiest and most widely used tool for thread safety in java.
+
+  type of variable               if thread safe ?
+  1.instance variable       no
+  2. stack variable          no
+  3. local variable         yes 
+
+
+  class test{
+    int x =10; //  instance-primitive
+    static String s = "Vivek"; // static-reference 
+    public static void main(String args[]){
+      int[] y = new int[3]; // local-reference
+    }
+
+  }
+
+  note: every variable should be either instance or static or local 
+  2. every variable in java should be either primitive or reference hence verisou possible combination of variable in java or  
+  instance -> primitive , reference
+  static  -> primitive , reference
+  local  -> primitive , reference
+
+
+  Uninilization Arrays
+
+  public class unInilizationVar {
+    int[]x;
+    public static void main(String[] args) {
+      unInilizationVar t = new unInilizationVar();
+      System.out.println(t.x); // null;
+      // System.out.println(t.x[0]); //Exception in thread "main" java.lang.NullPointerException: Cannot load from int array because "<local1>.x" is null
+    }
+  }
+
+
+  public class unInilizationVar{
+    int[] x = new int[3];
+    public static void main(String args[]){
+      unInilizationVar un = new unInilizationVar
+      sout(un.x)// [I@823 (toString method)
+      sout(un.x[0]);  //0
+    }
+  }
+
+  2. static level
+  1.static int x[]= x;
+  sout(x); // null
+  sout(x[0]) // RE: NullPointerException
+
+  2. static int[]x = new int[3];
+  sout(x) ; [I@23we;
+  sout(x[0]); // 0
+
+
+  3. local level 
+  1. int[] x;
+    sout(x); CE: variables x might not have iniliaztion
+    sout(x[0]); CE: variables x might not have iniliaztion
+  2. int x[] = new int [3] ;
+    sout(x); // [@3dwe
+    sout(x[0]);  // 0
+
+    onec we create an array every element by default iniliaztion with default values irrpesctive of weather instance or static or local array
+
+**var-arg methods (variable number of argument method) :-> sum(int... a)
+  until 1.4 version we con't declare a method with variable number of argument if there is a change in number of argument compersulry we should go far new method it incrse length of code and reduced readbility then overcome this problem some people introduces ver-arg method in 1.5 version according to this we can declare a method which can variable  no of argument such type method are called ver-arag method 
+  
+  we can declare ver-arg method as follows
+  ex. m1(int... x); 
+  we called this method by passing any number of int values including zero number 
+  m1();
+  m2(10);
+  m2(10,20,30);
+  m1(10,20,30,40,50,50... n);
+
+  public class verArg {
+  public static void m1(int... x){
+    System.out.println("ver-arg method");
+  }
+  public static void main(String[] args) {
+    m1();  //ver-arg method
+    m1(10);   //ver-arg method
+    m1(20,30,30,34);    //ver-arg method
+  }
+}
+
+note : internaly ver-arg parameter convert into 1D hence wihtin ver-arg method we can diffreciate values by using index
+
+
+public class verArg2 {
+  public static void main(String[] args) {
+    sum(10,20,30,40);// 60
+    sum(10,20,0); // 30
+  }
+  public static void sum(int... x){
+    int total =0;
+    for(int a: x){
+      total +=a;
+    }
+    System.out.println("the sum "+total); //60
+  }
+}
+
+
+loophole->
+which are follwing vaid declaration 
+m1(int... x)✅
+m1(int   ...x)✅
+m1(int...x)✅
+m1(int.   ..x)❌
+m1(int x...)❌
+m1(int  .x..)❌
+
+m1(int x, int... y)✅
+m1(Sting s, double ...x);✅
+m1(double... x, Sting s); ❌
+
+case3.if mix normal parameter with ver-arg parameter then ver-arg should be last parameter
+
+m1(int... x, double... d);//❌
+inside ver-arg we can take only one ver-arg parameter and we can't take more than one ver-arg parameter
+
+class Test{
+public static void m1(int... x){ //convert => m1(in[])
+    sout("int...);
+  }
+public static void main(int[] x){//convert => m1(in[])
+    sout("int[]");
+  }
+}
+
+inside a class we con't  declare ver-arg and Corressponding 1D array both method  simulteniously otherwise we will compile time error 
+
+class Test{
+  public static void m1(int... x){
+    sout("ver-arg method);
+  }
+  public static void m1(int x){
+    sout("General method");
+  }
+  public static void main(String args[]){
+    m1(); ver-arg
+    m1(10,20); ver-arg
+    m1(10); // General method ver-arag least priority
+  }
+}
+
+note : if old concept and new concept compare then win will be old concept old concept most priority
+
+in General ver-arg method will get least priority if no other method matched then only ver-arg will get change it is excitly same as defauls case inside switch  
+
+whenever 1D array prsent we can replace with ver-arg parameter
+m1(int []x) => m1(int... x);
+main(String arg[] ) => main(String... args);
+
+Reverse:
+m1(int... x)    ->m1(int[]x)
+m1();             ❌
+m1(10);           ❌
+m1(10,20,30)        ❌
+m1(new int[]{10,20});✅
+
+wherever ver-arg parameter prsent we con't replace with 1D array
+m1(int... x) => m1(int []x);❌
+
+note:  convert 
+m1(int... x ) => int[] x; 
+m1(String... s) => String[] x;
+m1(int[]... s) => int[][] x;
+
+we can called this method by passing a Group of 1D int array and x will become 2D int array 
+
+class Test{
+public static void main(String args[]){
+  int [] a = {10,20,30};
+  int [] b= {40,50,60};
+  m1(a,b);
+  }
+  public static void m1(int[]... x){
+   for(int x1: x){
+    sout(x1[0]) // 10,40;
+   }
+  }
+}
+
+
+
+
+
+
