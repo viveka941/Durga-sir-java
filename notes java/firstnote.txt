@@ -855,7 +855,7 @@ class Test {
     onec we create an array every element by default iniliaztion with default values irrpesctive of weather instance or static or local array
 
 **var-arg methods (variable number of argument method) :-> sum(int... a)
-  until 1.4 version we con't declare a method with variable number of argument if there is a change in number of argument compersulry we should go far new method it incrse length of code and reduced readbility then overcome this problem some people introduces ver-arg method in 1.5 version according to this we can declare a method which can variable  no of argument such type method are called ver-arag method 
+  until 1.4 version we con't declare a method with variable number of argument if there is a change in number of argument compersulry we should go far new method it incrse length of code and reduced readbility then overcome this problem some people introduces ver-arg method in 1.5 version according to this we can declare a method which can variable  no of argument such type method are called ver-args method 
   
   we can declare ver-arg method as follows
   ex. m1(int... x); 
@@ -933,7 +933,7 @@ class Test{
   public static void main(String args[]){
     m1(); ver-arg
     m1(10,20); ver-arg
-    m1(10); // General method ver-arag least priority
+    m1(10); // General method ver-args least priority
   }
 }
 
@@ -976,7 +976,237 @@ public static void main(String args[]){
 }
 
 
+Fundamentals part 13 || main() method:->
+
+wheather class contain or not and main method declare according to requirment or not these things own to  check by compiler yet run time jvm responsbile thise things if jvm unaviable then we will get run time exception saying no such method error :main 
+
+
+
+yet run time jvm such as the main method with follwing prototyre
+public :to create calss Jvm from anywhere 
+static: without existing Ojbect also Jvm have to case this methoed
+main: main() method won't reutn anythings to Jvm
+String: this is the name which i 
+args : command line argument
+
+above syntax very strick if we perforem any change then we will get runtime exception saying no such method error : main 
+
+
+we can declare stirng array in acceptable form 
+1.static public
+2.main(String args[])
+  main(String [] args)
+3.insted args we can take any valid java indentifire
+main(String[] vivek) 
+4.we can replace string array with ver-args parameter
+  main(String... args)
+
+public class lect13mainFinal {
+  static final synchronized  public void main(String... vivek){
+    System.out.println("Vaild main method");//Vaild main method
+  }
+}
+
+which of the follwing main method declaration valid
+1.public static void main(String args)❌
+2.public static void Main(String[] args)❌
+3.public void main(String[] args)❌
+4.public static int main(String args[])❌
+5.final synchronized public void main(String args[])❌
+6.final synchronized strictfp public static void main(String args[])✅
+7.public static void main(String... args)✅
+
+
+in which of above casese we will get compile timer error 
+=> we want get compile time error any where but except last tow cases in remian we will get run time exception saying no such method error main 
+
+case 1: 
+class Test{
+  public static void main(String args[]){
+    sout("String[]");
+  }
+  public static void main(int[] args){
+    sout("int[]");
+  }
+
+}
+
+overloading of the main method is possible but Jvm will always call string array argument main method only the othre overLoaded method we have to called excitly like normal method called 
 
 
 
 
+case 2:
+   inheritance concept aplicable for main method hence while excuting child class if child does't contain main method then parent class main method will be excuted 
+
+  file name is -> Parent.java
+class Parent{
+  public static void main(String args[]){
+    sout("Parent main");
+  }
+}
+class Child extends Parent{
+
+}
+
+javac Parent  
+ Parent.class , child.class 
+ java parent ->output=> Parent main 
+ java child -> output => Parent main 
+
+
+Case 3:
+  class Parent{
+  public static void main(String args[]){
+    sout("Parent main");
+  }
+ }
+class Child extends Parent{
+ public static void main(String args[]){
+    sout("Child main");
+  }
+ }
+
+javac Parent  
+ Parent.class , child.class 
+ java parent ->output=> Parent main 
+ java child -> output => child main 
+
+note=> it is method hinding but not Overrinding 
+-> its seens Overrinding concept aplicable for main method but it is not Overrinding and it is method hinding 
+
+*Note -> for main method inheritance and overloading concept are applicable but Overrinding concept is not applicable insted of Overrinding method hinding is applicable
+
+
+class Test{
+
+}
+
+RE: error Main method is not found in class Test
+public static void main(String args[])
+
+
+RC:rror: Main method not found in class NoMainMethods, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+
+public class NoMainMethods {
+
+  static {
+    System.out.println("static blcok ");
+    System.exit(0); jvm shout down
+  }
+}
+1.7 version above is most require main method 
+even the class contain static blcok it won't to be excuted if the class does't constain main method
+
+public class NoMainMethods {
+
+  static {
+    System.out.println("static blcok ");
+  }
+  public static void main(String[] args) {
+    System.out.println("maint method");
+  }
+}
+output?  static block
+        main method 
+  
+1.7 version
+
+
+Command Line Argument :
+the argument which are passing form command prompt 
+are called command line argument with these command line argument JVM will create an array and by passing array as argument JVm will called main method
+example: Java Test A B C <-|
+    args[0] = A
+    args[1] = B
+    args[2] = C
+
+Q.what is using Command line argument ?
+Command line arguments are a powerful way to pass parameters to a program when it is executed. They allow users to customize the behavior of the program without modifying its source code
+
+Class Test{
+  public static void main(String args[]){
+    int n =  Integer.parseInt(args[0]);
+    sout(the squre of "+ n * n);
+  }
+}
+
+the main Ojbective command argument is we can customize behavior of the main method
+
+case 1:
+
+    class Test{
+      public static void main(String args[]){
+        for(int i=0; i<=args.length; i++){ //error ArrayIndexOutOfBoundsSystem (i<=args.length)
+          sout(args[i]);
+        } 
+      }
+    }
+
+if we replace less then or equal to less then we want to get run time exception
+
+Case 2:
+class Test{
+      public static void main(String args[]){
+       
+       String [] argh = {"x", "y", "z"};
+       args = argh (**imp)
+       for(String s : args){
+        sout(s)
+         }
+      } 
+    }
+    input -> A B C <-|
+    output -> x y Z
+    input -> A B 
+    output -> x y Z
+    input -> null 
+    output -> x y Z
+
+
+Case 3:
+class Test{
+  public static void main(String args[]){
+    sout(args[0] + args[1]);
+  }
+}
+input-> 10 20
+output->1020 becuase String[] types variable
+
+within main method command arguments are aviable in String form 
+
+class Test{
+  public static void main(String args[]){
+    sout(args[0]); 
+  }
+}
+
+input-> "Note Book"
+output-> Note Book
+
+usellys space itself is the seperater between command line argument if our command itself contain space then we have to inclose that command line argument wihtin double quote ("")
+
+
+**Java Coding Standards 
+
+whenever we are writing java code it is highily recommended to follow coding standard 
+
+whenever we are writing any components its name should reflect the purpose of that components (functionality)
+
+the main advantage this approach is readbility and maintaibility will be imporoved
+
+class A{
+  public int mq(int a, int b){
+    return a+b;
+  }
+}
+//Amerpet Standards
+Package com.durgasoft.scjp;
+public class Calculator {
+  public static int add(int number1, int number2){
+    return number1 + number2;
+  }
+}
+Hi-tech city Standards
