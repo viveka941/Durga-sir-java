@@ -1,0 +1,126 @@
+
+  types of API
+    1.Internal API's ->notification Internal to orgnaiztion 
+    2.External API's -> across the world 
+    3. Partern API's -> specific partern not the entire world both the orgnaiztion
+
+  Stauts Codes in API's -> 
+  1xx(informational)
+  2xx(Succesful)
+  3xx(Redirection)
+  4xx(Clinet Error)
+  5xx(Server Error)
+  200 ok
+  201 Created
+  204 No Content
+  301 Moved Permenently
+  400 Bad Request
+  401 Unauthorized
+  403 Forbidden
+  404 Not Found
+  500 Internal Server Error 
+   
+Types of API Request
+-> Retrive or GET resources from Server
+-> Used only to read data
+POST Request
+-> Create resources from server 
+
+PUT Request
+-> Updating existing resources on Server 
+
+Delete Request 
+-> Used to Delete resources form server
+
+What is webFrameWork ?
+->wesites have lot in common
+->Security,Database,URL's,Authentication ..more
+->Should you do this evertime from scratch;
+
+Think of Buildling a House
+->You would need blueprint and tools
+->that's how web development works
+->development had to build form scratch
+
+What is Web FrameWork Does?
+web FrameWork is nothing but collection of tools and modules that is needed to do standard tasks across every web application
+
+Popular web FrameWorks 
+1.Spring boot(java)
+2.Django(Python)
+3.flask(Python)
+4.Express(javaScript)
+5.Ruby on Rails(Ruby)
+
+Features of Spring FrameWork
+  1.Inversion of Control 
+  2.Data Access
+  3.MVC FrameWork 
+  4.Trasaction Management
+  5.Security
+  6.Testing support
+  7.Internailization(i18n)and Localization
+
+  history 
+  developed Rod Johnson in 2002
+  first vesion released in marrch 2004
+
+
+  what is Spring boot?
+  =>Opne source java-based FrameWork wued to create stand-alone prduction-grade Spring-based application
+
+Spring 
+lots of step involved in setting up ,configuration writing boilderplate code, deployment of the app 
+
+
+Spring Boot
+offers a set of pre-configured components or defauls and eliminationg the need for a lot of boilderplate conde tahta was involved in setting up a Spring application
+
+Spring Boot = spring FrameWork + perbuilt             configuration + Embedded server
+
+components of SpringBoot
+=>Spring boot starters
+->Auto Configuration 
+->Spring Boot Actuator 
+->Embedded Server
+->Spring Boot DevTools
+
+
+Advantage of SpringBoot
+->Stand alone and Quick start
+->Starter Codes
+->Less Configuration
+->Reduced const and application developed time
+
+Why do Developers love spring boot
+->Java based
+->Fast Easy
+->comes with Embedded Server
+->Various Plugings
+->Avoids boilderplate code and confinguretion
+
+SpingBoot Architecuture
+->Persentation Layer => thise layer where in all the controller classes exist 
+->Service Layer => task such as evealution decision making processing of data is done at this layer
+->Data Access Layer Data access layer is teh layer where all the repository classes reside 
+
+
+sping initializer 
+
+
+Starting JPA (Java persisten API)->
+Java Persistence API (JPA) is a standard interface for accessing databases in Java, providing an automatic mapping between Java classes and database tables.
+Advantage JPA
+->Easy and simple 
+->make querying easier
+->allows to save and update Objects
+->Easy integration with spring boot
+
+curd -> JpaRepository <entity-name>, <primary-key-type>
+
+what is entity context of JPA
+in the context of represent table in the relational database
+
+Anonymous array->some time declaration an array without name such type of nameless array are called Anonymous Array
+the main purpose of Anonymous array is just for instent use [one time use]
+

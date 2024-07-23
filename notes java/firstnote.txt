@@ -1,11 +1,11 @@
 ----------------------Identifire-> 
 A name in java programme is called idintifire which can use for idintifcation purpose it can be method or variable name ,class name,or labal name
 
-  1.the only allow charature in java Identifire are a  to z, A to Z , 0 to 9, $, _ 
+  1.the only allow characture in java Identifire are a  to z, A to Z , 0 to 9, $, _ 
   ex. total_number✅ 
     tatol#❌
     123total❌ 
-  2.if are using any other charature we will get compile time error 
+  2.if are using any other characture we will get compile time error 
   3.Identifire is con't start number
   4.java Identifire is case sensitive language
   java language is treated case senitive  language
@@ -136,7 +136,7 @@ note :char -> 2byte
     byte b =10;
     byte b = 127;
     byte b 128;❌
-
+  
     flaot f = 123.567 ; ❌
     flaot f = 123.456f ;
     double f = 123.456;
@@ -169,4 +169,69 @@ note :char -> 2byte
         boolean b = 0; ❌  incompatible type : int require :boolean
         boolean b = True; ❌ con't not find symbols
         boolean b = "true" ; ❌  con't not find symbols
-        
+
+    Ex->
+        int x=0;
+        if(x) { ❌incompatible : types found : int require boolean
+          sout("hello");
+        }else{
+          sout("hi);
+        }
+
+
+    char ->
+    we can specified as singal characture within singal cottesion
+
+    char ch = 'a';
+    char ch = a ; ❌ con't find symbols : variable a 
+    char ch = "a"; ❌  incompatible type found a STring require char
+    char  ch = 'ab' ❌  ce: unclosed characture Literals, not a statement
+    char ch = 97;
+    sout(ch) // output a   
+    
+    we can specified char Literals or integeral Literals which reprsent unicode values of characture and that integeral Literals can be specified int decimal octaldecial allow range to 0 to 65535;
+    char ch = 0XFace;
+    char ch =0777;
+    char ch = 65535;
+    char ch = 65536;❌   ec: possible percisions loss 
+
+    char ch = '\u0061'; // output:  a
+    we can represent char Literals in unicode representation which in nothing but backslash u xxxx for digit hexadecimal number 
+
+    illegal escape characture (tyes: 8)
+    char ch = '\n' ;  // new line
+    char m = '\t';   // horizental tab
+    char ch = '\m'; mute char 
+    char ch = '\r'; carrgiage return 
+    char b = '\b'; back space
+    char f = '\f'; form feed
+    char ch = '\; singale quote
+    char ch = "\"; double quote
+    char ch = \\; backslash file path in use  
+
+
+    every escape characture is valid char Literals ex-above
+
+    String literals -> any sequence characture within double quote 
+                      writen is String literals
+      1.Binary literals-> for integeral data
+
+
+     double d = 1__2__3_5_5; // only readbilites we can used uderscore
+    System.out.println(d);
+    //output->12355.0
+     double d = 1__2__3_5_5.4456;
+    System.out.println(d); // output-> 12355.4456
+     double d = 1__2__3_5_;  ❌ // we con't used underscore in last
+    System.out.println(d);
+
+byte -> shotr
+            \
+                int -> long -> flaot -> double
+            /
+       char     
+
+       flaot  f = 10l;
+       sout(f); output 10;
+
+    

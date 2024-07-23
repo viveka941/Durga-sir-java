@@ -1,0 +1,171 @@
+type of variable -:
+
+bassed on type of values represent by a variable all variable divided into two types 
+1. primitive variable > con be used primitive values 
+  example ->
+   int x =10
+  
+  reference variable can be used to refer object 
+  Student s = new Student();
+
+division 2->  bassed on position are declare and behaviour all variable divided into three types 
+ 1.Instace variable
+ 2. static variable
+ 3.Local variable
+
+ 1. Instace variable-> if the values a variable is varid form object to Ojbect such type variable are called Instace variable
+ 2. for every Ojbect seperat copy instance object will be created.
+ 3. instance variable should declear within the class directly but outside many method or block or constructore 
+4.instance variable will be created at the time of creationg and destoryd  the scope instance excitly the scope of object
+5. instance variable will be stored in the heap memory is the port of Ojbect
+6.we con't access instance variable directly form static area but we can access by using Ojbect reference , but we access instance variable directly from instance area
+
+ for instance variable jVM will always default values and we are not requirment to fper fomr explicitly
+ or 
+ Instance variables are fields declared within a class but outside any method. They are used to store unique data for each instance of the class. Unlike class variables (static variables), which are shared among all instances, instance variables have distinct values specific to each individual object.
+
+instance variable also known as object level variable are attibutes
+
+class Test{
+  int x =10;
+  public static void main(String[] args){
+    Sout(x); ❌//CE: non-static variable x connot be reference form on static context
+    Test t = new Test();
+    sout(t.x); ✅
+  }
+  public void m1(){
+    sout(x);
+  }
+
+
+}
+
+class test{
+  int x;
+  double d;
+  boolean b;
+  String s;
+  public static void main(String[] args){
+    Test t1 = new Test();
+    sout(t1.x); // 0
+    sout((t1.d)); // 0
+    sout(t1.b) ; //false;
+    sout(t1.s); // null
+  }
+}
+ 
+
+**Static variable ->
+class Student{
+  String name;
+  int rollNo;
+static String sName;
+}
+
+if ststic values of variable createing one copy and share all object;
+1. if the values of a variable is not varid object ot Ojbect then it's not Recommended to declare variable as instance variable we have decleare such types variable at class level by using static modifire .
+
+2. In the case of instance variable for every object seperat copy will be created but in the case of static variable a singal copy will be created at the class level and share bye every object of the class
+
+3.static variable should be declare wihtin the class directly but outside any block or method or constructore 
+
+4. static variable will be created at the time of class loading and destoryd at the time class unloading hence scope of static variable is excitly same as scope of dot class file 
+
+Process:
+Java Test <-
+1.Start jVM
+2.create & start main Thread
+3.Locate Test class file
+4.Load Test.class  //static variable is creation 
+5.Excute main() methods
+6. Unload Test class // static variable is destoryd
+7.Terminate main Thread
+8.Shut down jVM
+
+static variable stored in Method are 
+
+class Test{
+  static int x =10;
+  public static void main(String args[]){
+    Test A = new Test();
+    sout(t.x); ✅ // readbility dowon 
+    sout(Test.x);✅ 
+    sout(x);✅
+  }
+}
+
+we can access static variable either by Ojbect reference or class name but Recommended to used class name 
+
+within the same class it is not require to used to class name and we can access directly
+class Test{
+  static int x =10;
+  public static void main(String args[]){
+    Test A = new Test();
+    sout(x);✅
+ }
+
+public class StaticVariable{
+  static int x =10;
+  public static void main(String[] args) {
+    StaticVariable s = new StaticVariable();
+    s.m1();
+  }
+  public void m1(){
+    System.out.println(x);
+  }
+}
+
+
+we can access static variable directly form both instance and static areas 
+
+public class static2 {
+  static int x;
+  static double d ;
+  static String s;
+  public static void main(String[] args) {
+    System.out.println(x); //0
+    System.out.println(d); // 0.0
+    System.out.println(s); // null
+  }
+}
+
+
+for static variable jVM provide default values and we are not require to perform iniliaztion explicitly
+
+static variable also known as class level variables or Fields 
+
+class Test {
+  static int x = 10;
+  int y = 20;
+
+  public static void main(String args[]){
+    Test t = new Test();
+    t.x=888;
+    t.y=999;
+    Test t2 = new Test();
+    System.out.println(t.x +" " + t2.y); // 888 20
+  }
+}
+
+
+
+**Local Variable  
+1. some times to meet temporary requirment of the progrmmer we can decleare variables inside a method or block or constructore such types of variable are called local variable or temporary variable or stack variable or automatic variables
+
+2. local variable will be stored inside stack memory
+3.local variable will be created while excuting the blcok in which declare it 
+4. onece block excution compelete automatically local variable will be destoryd hence the scope of local is blcok in which declare it 
+
+5. 
+public class LocalVariable{
+  public static void main(String[] args) {
+    int i=0; {
+      for (int j=0; j<3; j++){
+        i+=j;
+      }
+      System.out.println(i+" "+j);❌ // connot file symbol variable j 
+    }
+  }
+}
+
+for local variable jVM own to provide default values compersulry we should perform iniliaztion explicitly
