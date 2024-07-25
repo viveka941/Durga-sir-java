@@ -1,11 +1,11 @@
 ----------------------Identifire-> 
 A name in java programme is called idintifire which can use for idintifcation purpose it can be method or variable name ,class name,or labal name
 
-  1.the only allow characture in java Identifire are a  to z, A to Z , 0 to 9, $, _ 
+  1.the only allow charactrue in java Identifire are a  to z, A to Z , 0 to 9, $, _ 
   ex. total_number✅ 
     tatol#❌
     123total❌ 
-  2.if are using any other characture we will get compile time error 
+  2.if are using any other charactrue we will get compile time error 
   3.Identifire is con't start number
   4.java Identifire is case sensitive language
   java language is treated case senitive  language
@@ -76,7 +76,7 @@ java pure object oriented programming language?
 java is not pure whay
 more primitive data types
 
-1.java is not consider pure object oriten programming language beacsue several oops feature are not satisfied java (like->operator overloading , multipule inheritance).
+1.java is not consider pure object oriten programming language beacsue several oops featrue are not satisfied java (like->operator overloading , multipule inheritance).
 2.moreover we are depeding on primitive data types which are non objects .
 
 primitive data types -> 8 types
@@ -180,16 +180,16 @@ note :char -> 2byte
 
 
     char ->
-    we can specified as singal characture within singal cottesion
+    we can specified as singal charactrue within singal cottesion
 
     char ch = 'a';
     char ch = a ; ❌ con't find symbols : variable a 
     char ch = "a"; ❌  incompatible type found a STring require char
-    char  ch = 'ab' ❌  ce: unclosed characture Literals, not a statement
+    char  ch = 'ab' ❌  ce: unclosed charactrue Literals, not a statement
     char ch = 97;
     sout(ch) // output a   
     
-    we can specified char Literals or integeral Literals which reprsent unicode values of characture and that integeral Literals can be specified int decimal octaldecial allow range to 0 to 65535;
+    we can specified char Literals or integeral Literals which reprsent unicode values of charactrue and that integeral Literals can be specified int decimal octaldecial allow range to 0 to 65535;
     char ch = 0XFace;
     char ch =0777;
     char ch = 65535;
@@ -198,7 +198,7 @@ note :char -> 2byte
     char ch = '\u0061'; // output:  a
     we can represent char Literals in unicode representation which in nothing but backslash u xxxx for digit hexadecimal number 
 
-    illegal escape characture (tyes: 8)
+    illegal escape charactrue (types: 8)
     char ch = '\n' ;  // new line
     char m = '\t';   // horizental tab
     char ch = '\m'; mute char 
@@ -210,9 +210,9 @@ note :char -> 2byte
     char ch = \\; backslash file path in use  
 
 
-    every escape characture is valid char Literals ex-above
+    every escape charactrue is valid char Literals ex-above
 
-    String literals -> any sequence characture within double quote 
+    String literals -> any sequence charactrue within double quote 
                       writen is String literals
       1.Binary literals-> for integeral data
 
@@ -413,7 +413,7 @@ length:
     sout(s.length); //CE: connot find symbol 
     sout(s.length());  // 5
 
-  length(); is a final method aplicable for String Objects but not for aarays length() method return number of characture prsent in the string 
+  length(); is a final method aplicable for String Objects but not for aarays length() method return number of charactrue prsent in the string 
 
 String[] s= {"A","AA","bbb"};
 sout(s.length)✅
@@ -1210,3 +1210,625 @@ public class Calculator {
   }
 }
 Hi-tech city Standards
+
+Coding standard for classes :>
+uselly class name of nouns should start with upparcase charactrue and if constain multiple words every inner words should start with upparcase character 
+ex. String , StringBuffer , Account, Dog (noun)
+
+Coding Standards for inteface :>
+Runable ,Serialiable , Comparable 
+
+uselly interface name are adjective should start with upparcase character  and if it constain multiple words every inner words Should start with upparcase character 
+
+Coding standard for Methods  :>
+print() , sleep(), run(), eat(), start()  (varb)
+
+uselly method name are either verbs or verb noun combination should start with Lower Case alphabet symbol and if it constain with multiple words then Every inner words should start with upparcase character (Chamal case convension)
+ex.print() , sleep(), run(), eat(), start()  (varb)
+  getName(), setSalary(), setName();
+
+Coding standard for Variable :>
+ uselly variable names are nouns should start with lower case alphabet symbol and if it constain multiple words then every inner wrods should start with upparcase character (Chamal case convension)
+ ex. name , age ,salary , middleName.
+
+Coding standard constent :>
+MAX_VALUES, MAX_PRIORITY, NORM_PRIORITY, PI,
+
+uselly constent name are nouns should constain only upparcase character and if it constain multiple words then these words are seperated underscore symbol
+ex.MAX_VALUES, MAX_PRIORITY, NORM_PRIORITY, PI,
+
+Note:> uselly we can declare constent with public static final modifire 
+
+JavaBen Coding Standards :>  
+public class StudentBean{
+  private String name;
+  public void setName(String name){
+    this.name = name
+  }
+  public String getName(){
+    return name;
+  }
+}
+
+ A java bean is simple java class with private properties public getter and setter method 
+ class name hence of bean not allowd from Sun MircoSystem
+
+ Sytanx for setter method 
+ 1.it should be public method the return types should void 
+ 2. method name should be perfix set 
+ 3. it should take some argument that is it should not be not argument methods 
+ 4.it should public method the return should not void 
+ 5. method name should perfix with get 
+ 6. is should not take any argument
+
+ *7. boolean perporties getter method name can be prefix with either get are is but recommended to use is
+ public class lect13mainFinal {
+  private boolean Empty;
+  public boolean getEmpty(){
+    return Empty;
+  }
+  public boolean isEmpty(){
+    return Empty;
+  }
+ }
+
+ Java releated JavaBean 
+ Listeners-> 
+ case 1. 
+      public void addMyActionListener(MyActionListener l){}
+      public void registerMyActionListener(MyActionListener l)
+
+
+case 2. to unRegistrue Listener 
+1.public void revmoveMyActionListener( MyActionListener l) ✅
+2.public void unRegisterMyActionListener( MyActionListener l)❌
+3.public revmoveMyActionListener (ActionListener l)❌
+4.public void deleteMyActionListener(MyActionListener l)❌
+
+
+----> **Operator and Assigenment 
+topics-> most importatent 
+Increment and Decrement Operator
+Arithmetic Operator
+String concatenation operator
+Releational operator
+instance of operator
+Bitwise operator
+short circuit operator
+type cast operator
+conditional operator
+new operator
+[] operator
+operator precendence
+Evaluation order of operands
+new VS newInstance()
+instanceof VS isInstance()
+ClassNotFoundException Vs noClassDefFoundError 
+
+1.Increment and Decrement Operator :>
+  y=++x   // pre-Increment
+  y=x++   // post-Increment
+ Decrement 
+  y=--x    // pre-Decrement
+  y=x--   // post-Decrement
+
+  exprsion, iniliaztion of x, y  , final values of x
+  y=++x;  ->  10              -> 11    -> 11
+  y=x++   -> 10               -> 10    ->11 
+
+case 1:>
+  int x = 10;
+  int y  = ++x;
+  sout(y) ; // 11
+
+
+  int x = 10;
+  int y  = ++10;//CE: unexpected type values variable require
+  sout(y) ;
+
+ we can apply Increment and Decrement operators 
+ only for variables but not for constent values if we are trying to apply for constent values then we will get compile time error 
+
+case 2:>
+  int x  =10;
+  int y = ++(++x);❌ //RE:unexpeted type req variable
+  sout(y);
+
+  Listing of Increment and Decrement operator is not allowd 
+
+case 3:>
+ final int x =10;
+ x= 11;❌ CE: connot assing a values to final values x
+  sout(x);
+
+  final int x = 10;
+x++;❌ //CE: connot assing a values to final values x
+  sout(x);
+
+for final variable we con't apply Increment and Decrement operators 
+
+case 4:>
+  int x = 10;
+  x++;
+  sout(x); //11
+
+  char ch = 'a';
+  ch++;
+  sout(ch); // b 
+
+  double d = 10.5;
+  d++;
+  sout(d); //11.5
+
+  boolean b  = true;
+  b++;❌ //CE:operator ++ connot is applied to boolean 
+  sout(b); //error 
+
+  we can apply every primitive types except boolean
+
+  byte b =10;
+  b = b+1;❌ //Type mismatch: cannot convert from int to byte
+  sout(b); //error 
+
+  byte b =10;
+  b++;
+  sout(b); //11
+
+  different between b++ and b=b+1 
+
+  byte a=10;
+   byte b = 20;
+   byte c = a+b;❌//Type mismatch: cannot convert from int to byte(possible loss fo precision)
+    byte c =(byte) (a+b);✅
+   System.out.println(c);
+
+if apply any Arithmetic operator between two variable a & b operator the result types is always max of (int, type of a, type of b)
+
+ byte b = 10;
+ b++;
+System.out.println(b);
+
+but in the case of Increment and Decrement operator internal type casting automatically
+
+
+------>   Arithmetic Operator (+,-,/,*,%)
+
+if we apply any Arithmetic operator between variable a & b the result type is always max(int, type of a, type of b)
+
+byte + byte = int 
+byte + short = int
+short + short = int
+byte + long = long 
+long + double = double
+float + long = float 
+char + char = int
+char + double = double
+
+byte -> short ->  int -> long ->  float ->  double
+char ->  int -> long ->  float ->  double
+
+
+in integeral Arithmetic (byte short int long ) there is no way to reprsent infinitive hence if infinitive is the result we will get Arithmetic exception in integeral Arithmetic 
+ex.sout(10/0) ; RE: Arithmetic / by zero 
+
+but in floating point Arithmetic within breacket flaot and double there is way to reprsent infinitive
+for this Flaot and Double class contain the fowlling two constain hence even though result is infinitive we want to get any Arithmetic exception in flaoting point Arithmetic 
+ex. sout(10/0.0); infinitive
+sout(-10.0/0); -infinitive
+sout(0/0); java.lang.ArithmeticException: / by zero
+sout(0.0/0); NaN 
+sout(-0.0/0); NaN 
+
+
+ArithmeticException :>
+it is runtime exception but not compile -time error 
+it is possible only in integeral Arithmetic but not in floaint point Arithmetic
+
+String concatenation operators(+)
+
+------------->**String concatenation
+the only overLoaded operator in  java is (+) some times it access Arithmetic ans some time it String concatenation Operator 
+
+ String a ="Vivek";
+  int b=10,c=20,d=30;
+  System.out.println(a+b+c+d); //Vivek102030 //"Vivek+b+c+d
+  System.out.println( b+c+a +d);//30Vivek30 //b+c+"vivek+d
+  System.out.println( b+a+c+d);//10Vivek2030 //b+"vivek"+c+d 
+
+
+if atlest one argument is stirng type then (+) operator acces concatenation operator and if both argument are number type then (+) operator access Arithmetic addtion operator
+
+String a ="Vivek"
+int b =10, c=20, d=30
+1. a=b+c+d; ❌ // incompatiable type found int req String
+2. a=a+b+c;✅
+3. b=a+c+d;❌// incompatiable type found int req String
+4. b=b+c+d;✅
+
+Releational Operator (<,<=,>,>=)
+sout(10<20) true
+sout('a'<10) false 97
+sout('a' >'A')  true 97 65 
+sout(true >false ) CE:
+
+we can apply for every primitive type except boolean 
+
+we con't apply relational operator for ojbect types 
+sout("Vivek123" > "vive"); CE: operator connot to be applid to J.s. String 
+
+sout(10<20) true;
+sout(10<20<30); The operator < is undefined for the argument type(s) boolean, int
+
+distinct of relational operator is not allowd other wise we gill get compile time error 
+
+Equlity operator (== ,!=)
+sout(10 == 20) //false
+sout('a'=='b') //false
+sout('a'== 97.0) //true
+sout(false == false ) true;
+
+we can apply Equlity operator for every primitive type including boolean type also 
+
+we can apply Equlity operator for ojbect types also 
+for ojbect reference r1,r2
+r1==r2 return true , if only if both reference pointing to the same object (reference comparesion or address comparesion)
+
+Thread t1 = new Thread();
+Thread t2 = new Thread();
+Thread k3 = t1
+sout(t1 == t2 )//false
+sout(t1 == t3) //true
+
+
+ Thread t = new Thread();
+    Object o = new Object();
+    String s = new String("Vivek");
+    System.out.println(t==o);
+    System.out.println(o == s);
+    System.out.println(s==t);❌ error: incomparable types: String and Thread
+    
+    if apply Equlity operator then compulsary there should be relational between argument typs 
+    (either child to parent or parent to child or same type ) otherwise we will get compile time error saying incompatible types java.String and java.long.Thread
+    
+
+different b/w == operators & .equals() method
+== reference comparesion 
+.equals()  content comparesion
+
+String s1 = new String("vivek");
+String s2  = new stirng("vivek");
+sout(s1==s2) // false;
+sout(s1.equal(s2));
+
+in General we can used == operator for reference comparesion wihtin address comparesion and equal for 
+constent comparesion
+
+r==null // false
+null == null  // true
+
+String s = null
+sout(s==null) // true
+
+note:> for any object reference are double equal to null is always false 
+
+String s = new String("durga");
+
+** instanceOf operator :>
+we can used instanceOf operator to check weather the given object is of purticular type or not 
+
+Object o = l.get(o);
+if(o instanceOf Student)
+  Student s = (Student )o;
+  //perforem student specific functionality
+else if(o instanceOf Customer)
+  Custore c (Customer )o 
+  //perform Customer specific functionality
+
+
+  r instanceOf X //r= Ojbect reference x=lclass interface  
+
+  Thread -> Ojbect 
+  thread -> Runable
+
+  ex 
+  1. Thread t = new Thread();
+  sout(t instedof Thread); true
+  sout(t instanceOf Object); true
+  sout(t instanceOf Runable); 
+
+  Thread t = new thead();
+  sout(t instanceOf String ); CE: inconvertable types found java.long.thread require java.long.String 
+
+  to used instanceOf operator compulsary there should some relation between argument types (either child to parent or parent to child or same type) we will get compile time error saying inconvertable types 
+
+
+sout(null instanceOf X ) = false always
+sout(null instanceOf Thread ) = false always
+sout(null instanceOf Runable ) = false always
+
+
+**Bitwise Operator(&,|,^)
+& = AND = BOTH Argument ARE True
+| => OR => At leat one argument is true
+^ => X-OR => exclusive or if boath argument are different then it is true otherwise false
+sout(true & false) ; //false
+sout(true | false ); //true
+sout(true ^ false ); //true
+
+System.out.println(4&5);//4 
+4 = 100, 5 = 101  , Calculator of Binary NO.
+ 100
+&101
+=100
+ 
+System.out.println(4|5);//5
+ 100
+|101
+=101
+
+System.out.println(4^5);  //1 boht diff ->true
+ 100
+^101
+=001
+
+ we can apply these operator for intigeral types also 
+
+integeral types->The integral types are byte , short , int , and long , whose values are 8-bit, 16-bit, 32-bit and 64-bit signed two's-complement integers, respectively, and char , whose values are 16-bit unsigned integers representing UTF-16 code units (§3.1).
+ 
+ **Bitwise Compliment Operator (~) tild symbol
+ sout(~true); //CE:only applicable integeral not boolean
+ we can apply this operator only for integer types but not for boolean types 
+
+ sout(~4) //-5  only integer 
+ ~100
+ =011
+ note:>32 Compliment perform not perforem 
+ the most significant bit acces sing bit 
+ 0 mins positive , 1 mins = negative no
+ positive noumber will be represent directlly in memory where as negative noumber will be represent indirectly in two Compliment form 
+
+ boolean Compliment Operator (!) 
+ System.out.println(!4);only boolean
+
+//bad operand type int for unary operator '!'
+
+ we can apply this operator only for boolean types but not ingtigal types
+
+**short-crcuit Operator(&&,||)
+these are excitly same as betwise operator AND ,OR
+except the following diffreces 
+
+
+normal(&,!) :>
+both argument check 
+it is applicable for both boolean and integeral types 
+
+short-crcuit(&&,||) :> 
+it is most used in boolean types  
+only first argument check if it is true than check second argument 
+it is svae time 
+
+1.both argument should evealuted always
+1.second argument evealution is optional
+2.reativily perfomence is low   
+2.reativily perfomence is highily
+3.applicable for both boolean and integeral
+3.applicable for only boolean but not integeal 
+
+note:> 
+xx && yy -> y will be evealuted if only if x is true 
+          that is if x is false then y want be Evaluated 
+xx || yy -> y will be evealuted if only if x is false
+            that is x is true than y want be Evaluated
+
+int x = 10, y=15
+if(++x <10 & ++y >15){
+  x++;
+}else{
+  y++;
+}
+sout(x + " " + y);  //11 17
+
+int x = 10, y=15
+  if (++x < 10 && ++y > 15) {
+      x++;
+    } else {
+      y++;
+    }
+    System.out.println(x+" "+y); // 11 16
+  }
+
+  int x = 10, y=15
+  if (++x < 10 | ++y > 15) {
+      x++;
+    } else {
+      y++;
+    }
+    System.out.println(x+" "+y); // 12 16
+
+  int x = 10, y=15
+  if (++x < 10 || ++y > 15) {
+      x++;
+    } else {
+      y++;
+    }
+    System.out.println(x+" "+y); // 12 16
+  
+   int x=10;
+   if(++x<10 && (x/0)>10){
+    System.out.println("hello");
+   }else{
+    System.out.println("hii");
+   }
+  output -> hii
+
+if we replace && with & then we will get runtime Exception saying division by zero 
+
+**Type Cast Operator 
+there are two types 
+1.Implicit type casting
+2.Explicit types 
+
+int x='a'  
+sout(x) //97  implicit
+
+double d =10;
+sout(d); //10.0  implicit [compile convert int to double automatically by implicit typecasting ]
+
+note.
+1.compiler
+2.smaller->bigger values
+3.widening or upcasting
+4.no loss of information 
+
+
+compiler is responsbile to perforem to implicit type casting
+2.whenever we are assing smaller to bigger data types variable implicit type casting well be performed
+3. it is also known as widening or upcasting 
+4.there is no loss of information in this type casting 
+5.the following are verisou possible conversion where implicit type casting will per performed
+byte->short->int->long->float->double
+chars->int->long->float->double
+
+int x =130;
+byte b = x; // CE: possible loss of precision found int require byte;
+byte c = (byte)x; /-126,  Explicit
+
+note:
+1.programmer
+2.Bigger->smaller
+3.Narrowing 
+4.Loss of pericission
+
+1. progrmmer is responsbile to perforem explicit types casting 
+2.whenever we are assing bigger data type values to smaller data types variable than explicit type casting is require
+3.it is also known as Narrowing or down-casting
+4.there may be chance of loss of information is this type-casting 
+
+if move to 
+**byte->short->int->long->float->double
+left to right -> implicit type-casting
+right to left -> explicit  type-casting
+
+
+**Assigenment operator
+there are three  types of assigenment operator
+
+1.simple
+  int x=10;
+2.chaind 
+  int a,b,c,d;
+  a=b=c=d=20;
+  sout(a+" "+b+" "+c+" "+d+);
+3. compund 
+  a+=20
+
+ int a=b=c=d=20;❌//CE:connot find symbol symbol variable b location class test 
+
+ we con't performed chaind assigenment directlly at the time of declaration
+ int b,c,d;
+ int a=b=c=d=20; ✅
+
+
+
+sometimes assigenment operator mixed with some other operator such type of assigenment operator are called compound assigenment operator
+:>compound
+ int a =10;
+ a+=20;
+ sout(a); //30
+
+the follwoing are all possible compund assigenment in java 
+possible operator (11 items)
++=, -=, *=, /=, %=
+&=, !=, ^=
+>>=, >>>=, <<=, 
+
+ byte b = 10;
+  b=b+1; //CE:❌
+    System.out.println(b);
+
+ byte b = 10;
+    b++;
+    System.out.println(b);✅
+
+byte b = 10;
+b+=1;
+System.out.println(b);✅
+
+in the case of compound assigenment operator internal type casting performed automatically
+
+int a,b,c,d;
+   a=b=c=d=20;
+    a+=b-=c*=d/=2;
+    System.out.println(a+" "+b+" "+c+" "+d);
+    //-160 -180 200 10
+
+**conditional Operator(?,:)
+a++,++a =>Unary operator
+a+b => Binary operator
+
+the only possible ternary operator in  java is conditional operator ->
+int x = (c) ? b:d => ternary operator
+
+we can performed distinct conditional operator also 
+int x=(10>20) ? 30 :((40>50) ? 60 : 70) ;
+sout(x) // 70 
+
+** New Operator (new) ->
+we can used new operator to create object 
+ex. Test t = new Test();
+
+Note:>
+1.After creating ojbect constructure will excuted to performed iniliaztion of an ojbect hence constructure is not for creatation and it is for iniliaztion of an ojbect
+2.in java we have only new keyword but not delete keyword because destraction useless responsbilitye of garbegcollector 
+
+**[] Operator 
+we can used this operator to declare and create arrays. 
+ex. int[] x = new int[10];
+
+Operator precendence :>
+1.Unary operator
+  [],x++,x--
+  ++x, --x, ~,!
+  new,<type>
+2.Arithmetic Operator
+  *,/,&
+  +,-
+3.Shift operator:
+ >>,>>>,<<
+4.comparesion operator
+ <,<=,>,>=,instanceOf
+5.Equlity operator
+ ===, !=
+6.Bitwise operator
+ &
+ ^
+ |
+7. short circuit operator
+ && 
+ ||
+8.conditional Operator
+?:
+9.Assigenment operator
+  =,+=,-=,*=1
+
+Evaluation ordro of java operands
+in java we have only operator precendence but not aprend precendence before applying any operator all operand will Evaluated form left to right
+1+(2*3)/4+5*6
+1+(6/4)+5*6
+1+1+(5*6)
+(1+1+30)
+32
+
+System.out.println(1+2*3/4+5*6); //32
+
+1.new VS newInstance()
+2.instanceOf VS isInstance()
+3.ClassNotFoundException vs noClassDefFoundError
+
+1.new VS newInstance():>
+  Test t = new Test();
+  Student s = new Student();
+
+
+
