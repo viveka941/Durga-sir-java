@@ -328,7 +328,7 @@ int[][][] a = new int[3][4][];✅
 int[][][] a = new int[][4][5];❌
 
 Array Initialization
-one we carete array every array Element by defualts initializer with defauls values
+one we carete array every array Element by defualts initializer with default values
 example-> 
 1.int [] x =new int[3];
           sout(x) // [I@3w2
@@ -939,7 +939,7 @@ class Test{
 
 note : if old concept and new concept compare then win will be old concept old concept most priority
 
-in General ver-arg method will get least priority if no other method matched then only ver-arg will get change it is excitly same as defauls case inside switch  
+in General ver-arg method will get least priority if no other method matched then only ver-arg will get change it is excitly same as default case inside switch  
 
 whenever 1D array prsent we can replace with ver-arg parameter
 m1(int []x) => m1(int... x);
@@ -1017,7 +1017,7 @@ which of the follwing main method declaration valid
 7.public static void main(String... args)✅
 
 
-in which of above casese we will get compile timer error 
+in which of above casese we will get compile time error 
 => we want get compile time error any where but except last tow cases in remian we will get run time exception saying no such method error main 
 
 case 1: 
@@ -1831,4 +1831,334 @@ System.out.println(1+2*3/4+5*6); //32
   Student s = new Student();
 
 
+------>**Flow control 
+flow control describe the order in which the statement will be excuted at run time 
 
+1.Selection statement
+  if-else
+  switch
+2.Iterative statement
+ while()
+ do-while
+ for()
+ for-each() 1.5
+3.Transfer statement :>
+ break
+ constinoue
+ return
+ try-catch, finally
+ assert 1.4
+
+
+
+1.if(B){
+  Action if  b is true;
+}else{
+ action if b is false 
+}
+the argument to the if statement should be boolean types by mistake if we are tryping to provied any other type then we will get compilt time error 
+
+int x = 0;
+if(x){ 
+  sout("hello");
+}else{
+  sout("hi");
+}
+
+int x =10;
+if(x=20){ //❌CE: incompatible type
+  sout("hello");
+}else{
+  sout("hi");
+}
+
+int x =10;
+if(x==20){
+  sout("Hello");
+}else{
+  sout("hii"); 
+}
+//output :> hii
+
+ boolean x = true;
+    if(x = false){✅
+      System.out.println("hello");
+    }else{
+      System.out.println("hii");
+    }
+    //output ->hii
+
+    
+     boolean x = false;
+    if(x == false){ ✅
+      System.out.println("hello");
+    }else{
+      System.out.println("hii");
+    }
+
+//output:hello
+if(true); //✅
+
+ if(true)
+    int x=10; //❌ variable declaration not allowed 
+
+ if(true)
+    {int x=10;} //✅
+
+***Switch()
+if several options are aviable then it is not recommended to used nested if else because it reduced readbilites .
+to handle this requirment we should switch statement
+
+switch(x){
+  case :1 
+    action 1;
+    break;
+  case :2 
+    action 2;
+    break;
+  case :3 
+    action 3;
+    break;
+   default :
+    defualt action;  
+}
+
+switch (argument)not allow ->boolean, long, float, double
+allow ->byte char int ,byte, short, character, Integer, enum, String 
+
+1. the allowd argument types for the switch statement are byte short char int util (1.4 version) but from(1.5 version ) Corressponding wrapper class and enum type also allow form (1.7 version ) String types also allow.
+
+
+2. curly breacket are mendetaroy except switch every where curly breacket are optional.
+
+3. both case and defualt are optional that is Empty switch statement is valid java syntax.
+switch(X){
+
+}//valid 
+
+4.
+  switch (10) { 
+     
+    System.out.println("yes");
+    
+    } 
+    // 9 types error 
+
+  inside switch every should be under some case are defualt that is independent statement not allow inside switch otherwise we will get compile time 
+  error 
+
+int x =10;
+int y = 20;
+switch(x){
+  case 10:
+          sout(10);
+  case y :❌// constent experssion 
+        sout(20);
+        break; 
+}
+every case lebal should be compile time constent (that constent experssion )
+  
+if we declare y is final then we wnat get any compile time error 
+
+ int x = 10;
+    int y = 20;
+    switch (x+1) {
+      case 10:
+        System.out.println(10);
+      case 10+20+30: //✅
+        System.out.println(20);
+        break;
+    }
+
+
+     byte = 20;
+    switch (x) {
+      case 10:
+        System.out.println(10);
+      case 100: 
+        System.out.println("100");
+        break;
+      case 1000: //❌
+        System.out.println("1000"); // 
+      
+    }
+
+     byte x= 20;
+    switch (x+1) { ✅
+      case 10:
+        System.out.println(10);
+      case 100: 
+        System.out.println("100");
+        break;
+      case 1000: ✅
+        System.out.println("1000"); // 
+      
+    }
+every case should in the range of switch argument   otherwise we will get compile time error 
+
+int x =10;
+switch(x){
+  case 97://❌Dulicate case 
+    System.out.print(97);
+    break
+  case 98:
+    System.out.print(98);
+    break ;
+     case 999:
+    System.out.print(98);
+    break ;
+  case 'a':  
+      System.out.print("a");
+
+}
+
+// ❌Dulicate case not allow 
+
+case level summary
+1.it should be constent exprsion
+2.the shouldbe in the range of switch argument type
+3.❌Dulicate case lavels are not allowd 
+
+fall through inside switch
+
+switch(x){
+  case 0: 
+        sout(0);
+  case 1:
+        sout(1);
+        break;
+  case 2:
+        sout(2);
+  defaul :
+          sout("def");
+}
+input 0 = output 0,1
+input 1 = output 1
+input 2 = output 2, def
+input 15= output def 
+
+wihtin the switch if any caes is matched form the case on the word all statement will excuted until break or end of the switch this called for through inside switch.
+
+the main advantage of fall though inside switch is we can define comman action for multiple case (code reusebility )
+
+Scanner sc = new Scanner((System.in));
+    int x = sc.nextInt();
+      switch (x) {
+        case 1:
+        case 2:
+        case 3:
+        System.out.println("q-1-3");
+          
+          break;
+        case 4:
+        case 5:
+        case 6:
+        System.out.println("q-4-6");
+       
+          break;
+      }
+
+  
+Default :>
+wihtin the switch we can take default at most once.
+2.defualt case will be excuted if an only there is no case matched within the switch we can writen defualt case anywhere but it is recommended to write as last case 
+
+ Scanner sc =new Scanner(System.in);
+   int x = sc.nextInt();
+    switch ( x) {
+   
+      default:
+      System.out.println("def");
+        break;
+
+        case 0:
+        System.out.println("0");
+        break;
+        case 1:
+        System.out.println("1");
+        case 2:
+        System.out.println("2");
+    }
+    //
+    input 0, output = 0
+    input 1, output = 1,2
+    input 2, output = 2;
+    input 12,output = def
+
+  
+
+Iterative statement
+1.while()
+2.for()
+3.do-while()
+4.for-each 
+
+
+if we don't know noumber of Iteration in  advace then we should go for while loop 
+while(rs.next){}
+while(e.hasMoreElement){}
+while(itr.hasnext()){}
+
+while(condition ){ // should be boolean types  
+   action 
+}
+
+note: the argument should be boolean type if we are trying to provide any other type then will get compile time error 
+
+while(1){//❌Type mismatch: cannot convert from int to boolean
+  sout("hello");
+}
+
+
+
+curly breacket are optional and without curly breacket we can take only one statement under while
+which should not be declartive statement
+1.which(true)
+  sout("hello)✅
+
+2.while(true)✅
+
+3.while(true)
+  int x = 10; ❌
+
+4. while(true){
+  int x = 10;✅
+}
+
+
+5. while(false) {//❌ Unreachable code
+      System.out.println("hello");
+   }
+    System.out.println("hii");
+
+6.while(true){//❌ Unreachable code
+  sout("hello");
+}
+  sout("hi")
+
+7. int a =10, b=20;
+  while(a<b){
+    sout("hello");//✅infinite 
+  }
+    sout("hii");
+
+8.int a=10,b=20;
+  while(a>b){
+    sout("hello");
+  }
+    sout("hii");//✅once hii
+
+9.  final int a = 10, b = 20;
+    while (a < b) {
+      System.out.println("hello");
+ }
+    System.out.println("hii"); //❌ Unreachable code
+
+
+10.final int a =10,b=20;
+    while (a>b) {
+      System.out.println("hello");
+      }
+      System.out.println("hii"); //❌ Unreachable code
+
+  
