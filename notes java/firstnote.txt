@@ -38,7 +38,7 @@ A name in java programme is called idintifire which can use for idintifcation pu
   1.  keyword(it is have some functionality)-> (50) 
     1.Used keyword(48) -> if, else, 
       ->keyword for data types-> byes,short,char,int,long,float,double,long 
-      ->flow control keyword -> if ,else, switch, case, default, do ,while, for, break, constiune,reutn
+      ->flow control keyword -> if ,else, switch, case, default, do ,while, for, break, contiune,reutn
       ->Modifire keyword ->public , private,static,final, abstarct, synchronized, native, volatile,
       trasient
       ->key exception Handling-> try,catch,finally,thorw,thorws, assert,
@@ -60,7 +60,8 @@ A name in java programme is called idintifire which can use for idintifcation pu
   }
 
   Consulusion
-1.all 53 reserved in java constain only lower case alphabet symbols
+1.acl 53 reserved in java constain only lower case whenever we are compile a java programme for every class prsent in program a seperat .class file will be genereted 
+alphabet symbols
 2.in java we have only new keyword and no delete keywe
  beacsue disteraction uselees object responsbilitye of garbeg colletcor
 3. strictfp, assert, enum these keyword new in java 
@@ -2163,3 +2164,413 @@ which should not be declartive statement
 
   
   
+  note
+  1. evey final variable will replace by the value yet compile time only
+  final int a =10;
+  int b =20;
+  sout(a);
+  sout(b);
+
+  2. if every argument is final variable (compile time constent) then the operation should be performed yet compile time only 
+  
+    final int a = 10, b = 20;
+    int c = 20;
+    System.out.println(a + b); //30
+    System.out.println(a + c);//30
+    System.out.println(a<b); //ture;
+    System.out.println(a<c); // true;
+
+
+if we want to excute loop body at least once then we should go for do while
+do{
+  body
+}which(b); // should be boolean types
+
+ int b = 2;
+    do // ✅
+      System.out.println("hii");
+    while (true); //✅
+
+  do 
+  int x =10; //❌
+  which(true); //❌
+
+  do //❌
+  while(true);//❌
+
+  curly breacket are optional and without curly breacket we can take only statement do and while which should not be declartive statement
+
+ do while (true)  ✅
+  System.out.println("hii");//✅ infinitive
+  while (false) ; ✅
+
+  looking carefull
+   do
+      while (true)
+        System.out.println("hii");
+    while (false);
+
+
+  1. 
+   do {
+      System.out.println("hello");
+    } while (true);
+    System.out.println("hii");//CE:Unreachable
+
+2. 
+  do {
+      System.out.println("hello");
+    } while (false);
+    System.out.println("hii");
+    output// hello hii
+3.
+     int a =10,b=20;
+  do{
+    System.out.println("hello");
+  }while(a<b);
+  System.out.println("hii");
+  output // hello  infinitive
+
+4.  
+    int a =10,b=20;
+  do{
+    System.out.println("hello");
+  }while(a<b);
+  System.out.println("hii");
+  output // hello hii
+
+5. final int a = 10, b = 20;
+    do {
+      System.out.println("hello");
+    } while (a < b);
+    System.out.println("hii");//❌ Unreachable
+
+6.
+     final int a = 10, b = 20;
+    do {
+      System.out.println("hello");
+    } while (a > b);
+    System.out.println("hii");
+    //output = hello hii
+
+
+***for Loop 
+1. for is most commonly used loop in java 
+2. if we know number of Iteration in advance then for loop is best choice 
+
+for(iniliaztion section; condition ;Increment ){
+  loop body 
+}
+
+note : curly breacket are optional and without curly breacket we can take only statement under for loop which should not be declartive statement 
+
+for(int i=0; i<10; i++){
+  sout(i);
+}
+
+for(int i=0; i<10; i++);
+
+for(int i=0; i<10; i++)❌
+  int x=10;  // ❌
+
+this part will be excuted only once in loop cycle 
+2. we can declare and iniliaztion local variable of for loop 
+3.here we can declare any number of variable but should of the same type by mistake if we are trying different data type variable then we will get compile time error 
+
+int i=0,j=0;
+int i=0, String s ="vivek";❌
+int i=0, int j=0; ;❌
+
+ int i = 0;
+    for (System.out.println("hi"); i < 10; i++) {✅
+      System.out.println(i);
+    }
+
+in the iniliaztion section we can take any valid java statement including sout()
+
+ int i = 0;
+    for (System.out.println("hi"); true; i++) {
+      System.out.println(i);
+    }
+
+here we can take any valid java expression but should be of the type boolean
+
+this part is optional if are nat taking anythings then compile always place true
+
+ int i = 0;
+    for (System.out.println("hello"); i < 3; System.out.println("hii")) {
+    i++;
+    }
+    // 
+    hello
+    hii
+    hii
+    hii
+
+    in the Increment or decriment section any valid java statement including sout("ii");
+  
+  for(;;);
+  
+  for(;;){
+    sout("hello");
+  }
+  all three part for loop are indipendent of each other and optional 
+
+for(int i=0; true; i++){
+  sout("hello");
+}
+sout("hii");❌ Unreachable
+
+for(int i=0; false; i++){ //❌ Unreachable
+  sout("hello");
+}
+sout("hii");
+
+int a =10, b =20;
+for(int i=0; a<b; i++){ 
+  sout("hello");//✅ infinitive
+}
+sout("hii");
+
+final int a=10,20;
+for(int i=0; a<b; i++){ //❌ Unreachable
+  sout("hello");
+}
+sout("hii");
+
+
+ final int a = 10, b = 20;
+    for (int i = 0; a > b; i++) { // ❌ Unreachable
+      System.out.println("hello");
+    }
+    System.out.println("hii");
+
+
+for-each loop(enhanced for loop) //
+1. introduces 1.5 version
+2. it special desigend look retrive element of array 
+and collection
+example 1.
+to print 1D aaray 
+int x ={1,2,3,4}
+for(int i=0; i<arr.length; i++){
+  sout(x[i]);
+}
+
+for-each
+int x ={1,2,3,4}
+for (int x1 : x){ 
+  sout(x1);
+}
+
+example 2.
+to print of 2D array 
+int [][]x = {{10,20 30},{40,50,60}};
+for(int i=0; i<x.length ; i++){
+  for(int j=0; j<x.length ; j++){
+    sout(x[i][j]);
+  }
+}
+
+ int[][] x ={{1,2,3,},{4,5,6,}};
+  for(int[] x1: x){
+    for(int x2 : x1){
+      System.out.print(x2+" ");
+    }
+    System.out.println();
+  }
+
+ int[][][] x = { {{ 1, 2, 3 }, { 4, 5, 6 },{7,8,9} }};
+    for (int[][] x1 : x) {
+      for (int[] x2 : x1) {
+        for(int x3 : x2){
+          System.out.print(x3+" ");
+        }
+        System.out.println();
+      }
+      System.out.println();
+    }
+
+
+
+    for(int x:10){// ❌ 
+    System.out.println("hii");
+   }
+
+note: for-each is best choice to retrive element of array and collection but its limitation is it is applicable only for aaray and collection and it is nat a General purpose loop 
+
+
+***Iterable(I)
+target -> Array /collection , Iterable Object
+for(eachItem x: target ){
+
+}
+
+1.the target element in for-each should be Iterable object 
+2.than object said to Iterable if only if Corressponding class class impliment java.long.IterableInterface 
+3. introduces 1.5 it contains only on method Iterator 
+public iterator iterrator()
+4. Array releated class and collection implimented class already impliment Iterable interface being a programmer we are not require to do any things just we should awre the poing about Iterable 
+
+
+diffreces between Iterator and Iterable
+Iterator(I):> this is releated to collection
+Iterable(i):> it si releated to for-each loop
+
+Iterator:> we can use to retrive the element of collection one by one 
+Iterable:> the target element in for-each loop should be Iterable
+
+
+Iterator:>java.util.package
+Iterable:> java.lang package
+
+  Method 
+Iterator:>1. i.hasNext()
+          2. i.next()
+          3. remove()
+Iterable:> iterator()
+
+  
+  ***Transfer statement
+1.break
+2.constinoue
+
+break:> we can used break statement in the following palceces
+1.inside switch : stop fall through
+  int x =0;
+  switch(x){
+    case 0:
+      System.out.println(0);
+    case 1:
+      System.out.println(1);
+      break;
+    case 2:
+      System.out.println(2);
+    default :
+      System.out.println ("Defalut");
+       
+  }
+  output-0,1
+
+2. inside loops
+  to break loop excution bassed on some condition 
+  for(int i=0; i<10; i++){
+    if(i==5){
+      break;
+    }
+    sout(i);
+  }
+  output: 0,1,2,3,4
+
+3. Inside labeld blcoks:to break blcok excution bassed on some condition
+ class Test{
+  public static void main(String args[]){
+    int x= 10;
+    l:{
+      sout("begin");
+      if(x==10){
+        break l;
+      }
+      sout("end");
+    }
+    sout("hello");  
+  }
+ }
+ output->begin , hello
+   
+ int x =10;
+  if(x==10) 
+  break;//❌ error: break outside switch or loop
+  System.out.println("hello");
+
+
+**Continue
+we can used continue inside loop to skip current iteration and continue for next Iteration 
+    for (int i = 0; i < 10; i++) {
+      if (i % 2 == 0) {
+        continue; // never used outside loop 
+
+      }
+      System.out.println(i);
+    }
+
+
+
+Labeled Break & continue 
+La1:
+for(){
+  la2:
+  for(){
+    for(){
+      break la2;
+      break ;
+    }
+  }
+}
+we can used labeld break and continue to break and continue a perticullar loop in nested loop 
+
+
+
+
+-------------------------------------------------------------------------------------------------------
+Declaration & Access Modifire
+1.Java Soucre file structure
+2.class Level modifire
+3.Member level modifire
+4.Interface
+
+
+1.Java Soucre file structure:>
+  a java program can constain any noumber of class but at most one can be declare as public if there is public than name of the program and name of the public class must be matched otherwise will get compile time error 
+class A{}
+public class B{}  // file name is B.java
+class C{}
+ class D{} 
+
+if there is no public class then we can used any name and there is no ristriction 
+class A{}
+class b{}
+class C{}
+class D{}
+
+case 2:
+ if class B is public then name of the program should be B.java otherwise we will get compile tiem error saying class b is public should be declared in name with B.java 
+public class B{}  // file name is B.java
+
+
+case 3 :
+if class B and C declare as public and name of the program is B.java then we will get compile time error saying class c is public should declare in a file named c.java 
+
+
+
+ class manyClass {
+  public static void main(String[] args) {
+    System.out.println("A class");
+  }
+}
+
+class B{
+  public static void main(String[] args) {
+    System.out.println("Class B");
+  }
+}
+class C{
+  public static void main(String[] args) {
+    System.out.println("C class");
+  }
+}
+class D{
+
+}//❌Main method not found in class D, please define the main method as:
+   public static void main(String[] args)
+
+file name is: vivek.java 
+             javac vivek.java //compile 
+             4 file class file create 
+class A = java A 
+class B = java B 
+class C = java c  
+class D = //RE: Main method not found in class D, please define the main method as:
+   public static void main(String[] args)
+
+Conculusion :> whenever we are compile a java programme for every class prsent in program a seperat .class file will be genereted 

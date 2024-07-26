@@ -123,4 +123,3 @@ in the context of represent table in the relational database
 
 Anonymous array->some time declaration an array without name such type of nameless array are called Anonymous Array
 the main purpose of Anonymous array is just for instent use [one time use]
-
