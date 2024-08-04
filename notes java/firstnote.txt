@@ -1187,7 +1187,7 @@ class Test{
 input-> "Note Book"
 output-> Note Book
 
-usellys space itself is the seperater between command line argument if our command itself contain space then we have to inclose that command line argument wihtin double quote ("")
+usuallys space itself is the seperater between command line argument if our command itself contain space then we have to inclose that command line argument wihtin double quote ("")
 
 
 **Java Coding Standards 
@@ -1213,32 +1213,32 @@ public class Calculator {
 Hi-tech city Standards
 
 Coding standard for classes :>
-uselly class name of nouns should start with upparcase charactrue and if constain multiple words every inner words should start with upparcase character 
+usually class name of nouns should start with upparcase charactrue and if constain multiple words every inner words should start with upparcase character 
 ex. String , StringBuffer , Account, Dog (noun)
 
 Coding Standards for inteface :>
 Runable ,Serialiable , Comparable 
 
-uselly interface name are adjective should start with upparcase character  and if it constain multiple words every inner words Should start with upparcase character 
+usually interface name are adjective should start with upparcase character  and if it constain multiple words every inner words Should start with upparcase character 
 
 Coding standard for Methods  :>
 print() , sleep(), run(), eat(), start()  (varb)
 
-uselly method name are either verbs or verb noun combination should start with Lower Case alphabet symbol and if it constain with multiple words then Every inner words should start with upparcase character (Chamal case convension)
+usually method name are either verbs or verb noun combination should start with Lower Case alphabet symbol and if it constain with multiple words then Every inner words should start with upparcase character (Chamal case convension)
 ex.print() , sleep(), run(), eat(), start()  (varb)
   getName(), setSalary(), setName();
 
 Coding standard for Variable :>
- uselly variable names are nouns should start with lower case alphabet symbol and if it constain multiple words then every inner wrods should start with upparcase character (Chamal case convension)
+ usually variable names are nouns should start with lower case alphabet symbol and if it constain multiple words then every inner wrods should start with upparcase character (Chamal case convension)
  ex. name , age ,salary , middleName.
 
 Coding standard constent :>
 MAX_VALUES, MAX_PRIORITY, NORM_PRIORITY, PI,
 
-uselly constent name are nouns should constain only upparcase character and if it constain multiple words then these words are seperated underscore symbol
+usually constent name are nouns should constain only upparcase character and if it constain multiple words then these words are seperated underscore symbol
 ex.MAX_VALUES, MAX_PRIORITY, NORM_PRIORITY, PI,
 
-Note:> uselly we can declare constent with public static final modifire 
+Note:> usually we can declare constent with public static final modifire 
 
 JavaBen Coding Standards :>  
 public class StudentBean{
@@ -2574,3 +2574,631 @@ class D = //RE: Main method not found in class D, please define the main method 
    public static void main(String[] args)
 
 Conculusion :> whenever we are compile a java programme for every class prsent in program a seperat .class file will be genereted 
+
+2. we can compile a java program (java source file ) but we can run a java a.class file 
+
+whenever we are excuting a java class the Corressponding class main method will be excuted 
+
+if class does't conatin main method then we will get run time exception RE: main method not found in class 
+
+if the Corressponding that class file not aviable then we will get runtime exception saying no def found error.
+
+ it is not recommended to declare multiple classes in singale scource file it is highily recommended to declare only one class per scource file and name of the program we have to keep same as class name 
+ the main advantage of this approach is readbilites and maintaibility of the code will be imporoved 
+
+class Test{
+  public static void main(String args[]){
+    java.util.ArrayList L = new java.util.ArrayList();
+
+  }
+}  
+
+or 
+
+ 
+
+import statement 
+we can solve this problme by using fully qualified name -> java.util.ArrayList L = new java.util.ArrayList();
+
+fully qualified (java.util.ArrayList)
+the problem with full qualified name every time is it incrse the length of the code and reduced readbilites
+we can solve this problem by using import statement 
+whenever we are writing import statement it is not require full qualified name we can used short name directlly hence import statement acces typing shortcut .
+
+import java.util.ArrayList;
+class Test{
+  public static void main(String args[]){
+    ArrayList L = new ArrayList();
+    
+  }
+} 
+
+
+what is purpose import statement ? 
+there are two types of import statement 
+1.explicit class import  import java.java.Scanner;
+2.implicit class import  import java.util.*;
+ 
+1.explicit class import :> 
+ex. import java.util.ArrayList; 
+->it is highly recommended explicit class import becasue it imporoved readbilites or the code 
+->best suitable for hi-tech city where readbilites is importaten 
+
+
+2.implicit class import -> import java.util.*;
+  not recommended to use because it readuce readbilites of the code 
+-> best suitable for Amirpad where typing is import  
+  is importaten
+
+case 2 :
+  which of the following import statement meaning full 
+  import java.util.ArrayList;✅
+  import java.util.ArrayList.*;❌
+  import java.util.*;✅
+  import java.util; ❌
+
+case 3:
+  consider the following code
+class my Object extendsjava.rmiUnicastedRemotOjbec{}
+
+point: the code compile fine even though we are not writen import statement
+because we used fully qualified name
+
+Note :
+ whenever we are fully qualified name it is not require to right import statement similarily 
+ it is not require to used fully qualified name 
+
+ import java.util.*;
+import java.sql.*;
+
+
+
+public class cmd {
+  public static void main(String[] args)  {
+    Date d = new Date();
+  }
+}
+cmd.java:6: error: reference to Date is ambiguous
+    Date d = new Date();
+                 ^
+  both class java.sql.Date in java.sql and class java.util.Date in java.util 1 match 2 errors
+
+  note: even the case of the List we may get same ambiguous problem because it is aviable in both util and awt package  
+
+
+while resolveing compiler will give precedence in the following 
+1.Explicit class import 
+2.Class present in CWD(Current working dirctory) (Default package )
+3.Implicit class import 
+
+whenever we are importing a java package all cleasses and interface present in the package by defaul aviable but not subpackage classes if we subpackage class comparsalry we should wirte import statement unitl sabpackage level 
+ex. 
+java -> util->regex ->Pattern 
+
+to used patter in our program which import statement is require 
+1. import java.*;
+2. import java.util.*;
+3. import java.util.regex.*;✅
+4 no import require
+
+
+all class and Interface prsent the following package are by default aviable to every java programme hence we are not require  to right import statement .
+1. java.long package.
+2. defualt package(current working dirctory).
+
+import statement is toatly compile releated concept 
+if more number of import then more will be the compil time but there is no affect on excution time (run time).
+
+case 9 :
+different between c longuage #include<stdio.h>
+and java import statement .
+in the case of c longuage #include all input output header at the loaded beging only (at translation time ) hence it is static include .
+
+but in the case of java import statement no dot class file will be loaded at the beging whenever we are using a purticular class then only Corressponding
+dot class file will be loaded this is like dynamic include this is consider as dynamic include  or load on dimand or load on fly 
+
+Note: 1.5 version new featrues 
+1.for-each loop
+2. ver-arg method
+3. autoboxing 
+4.Generic
+5.Co-verient return types
+6.Queue
+7.Annotations
+8.enum 
+9.Static import
+
+
+**Static import :> introduces in (1.5 version)
+according Sun uses of static import reduced length of the code and improvd readbilites but according word wide programming export (like us) uses of static import create confusion and reduced readbilites
+hence if there is no specific requirment then it is not recommended to used static import 
+
+
+
+note : usually we can acces static member by using class name but whenever we are writing static import 
+we can access static members directelly without class name 
+:>without staic import 
+public class cmd {
+  public static void main(String[] args)  {
+    System.out.println(Math.max(45,45)); //45
+    System.out.println(Math.sqrt(4));  //2.0
+    System.out.println(Math.random()); //0.208982867
+  }
+}
+
+:> with static 
+import static java.lang.Math.*;
+public class cmd {
+  public static void main(String[] args)  {
+    System.out.println(max(45,45)); //45
+    System.out.println(sqrt(4)); //2.0
+    System.out.println(random()); // 0.32423324223
+  }
+}
+
+
+class Test{
+  static String s="Vivek";
+}
+public class Test1{
+  Test.s.length();
+}
+
+Explain about:> System.out.println();
+Test->Test is a class name
+s-> s is a static variable present in Test clas of the type java.lang.String 
+length()-> length() is a method present in String class
+
+class System{
+  static PrintStream out;
+}
+System.out.println();
+System->System is a class prsent in java.lang package
+out->out is a static variable present in System class of the types PrintStream 
+println()->println() is method prsent in PrintStream class 
+
+import static java.lang.System.*;
+class Test{
+  public satatic void main (String args[]){
+    out.println("Vive");
+  }
+}
+
+out is a static variable present System in class hence we can access by using class name System but whenever we are useing writing static import it is not require to use class name and we can acces out directlly 
+
+import static java.lang.Integer.*;
+import static java.lang.Byte.*;
+
+public class cmd {
+  
+  public static void main(String[] args) {
+  
+   System.out.println(MAX_VALUE);//CE:The field MAX_VALUE is ambiguous
+
+  }
+}
+
+ import static java.lang.Integer.MAX_VALUE;
+import static java.lang.Byte.*;
+
+public class cmd {
+  static int MAX_VALUE = 999;
+  public static void main(String[] args) {
+  
+   System.out.println(MAX_VALUE);
+  }
+}
+ output -> 999
+
+ import static java.lang.Integer.MAX_VALUE;
+import static java.lang.Byte.*;
+
+public class cmd {
+  // static int MAX_VALUE = 999;
+  public static void main(String[] args) {
+  
+   System.out.println(MAX_VALUE);
+  }
+}
+output-> 2147483647
+
+
+// import static java.lang.Integer.MAX_VALUE;
+import static java.lang.Byte.*;
+
+public class cmd {
+  // static int MAX_VALUE = 999;
+  public static void main(String[] args) {
+  
+   System.out.println(MAX_VALUE);
+  }
+}   
+output->127
+
+
+
+
+while resolveing static member compiler will always consider the precedence in follwing order
+note:  priority 
+1.current class Static member
+2.explicit static import
+3.Implicit static import
+
+
+    import static java.lang.Integer.MAX_VALUE; //2️⃣
+    import static java.lang.Byte.*;//3️⃣
+
+    public class cmd {
+      static int MAX_VALUE = 999; //1️⃣
+      public static void main(String[] args) {
+      
+      System.out.println(MAX_VALUE);
+      }
+    }
+
+    1️⃣->if we comment this line then explicit import consider and hence integer class MAX_VALUE will be consider in this case output is 2147483647
+    
+    if we comment both line 1️⃣2️⃣ then implicit static import will be consider in this case output is 127[byte class max values ]
+
+
+    normal import 
+    1.Explicit import
+      Syntax :
+      import packagename.classname;
+        ex:import java.util.ArrayList;
+
+    2.implicit import 
+      Syntax:
+        import Packagename.*;
+        ex: import java.util.*;
+
+    
+    static import 
+    1.explicit static import:
+        syntax:
+        import static packagename.classname.staticmember;
+        ex: import static java.lang.math.sqrt;
+        import static java.lang.System.out;
+    
+    2.Implicit static import
+      syntax:
+      import static Packagename.classname.*;
+      import staic java.lang.System.*;
+
+
+which of the follwoing import statement are valid 
+1.import java.lang.Math.*;❌
+2.import static java.lang.Math.*;✅
+3.import java.lang.Math.squrt;❌
+4.import static java.lang.Math.sqrt();❌
+5.import java.lang.Math.sqrt.*;❌
+6.import static java.lang.Math.sqrt;✅
+7.import java.lang;❌
+8.imprt static java.lang;❌
+9.import java.lang.*;✅
+10.import static java.lang.*;❌
+
+two package contains a class or interface with same name is vary rear and hence ambiguous problem is also very rear in normal import 
+
+but two class are inteface contains a Veriable or method same name very common and hence ambiguous problem also very common problem in static import 
+
+used of static import reducesd the readbilites and create confusion and hence if there is no specific requirement then it not recommended to used static import 
+
+diffreces between normal and static import 
+we can used normal import ,import classes and interface of a purticular package
+->whenever we are writing normal import it is not require to used fully qualified name and we can used short name directly
+->we can used static import to import static member of a purticular class or interface 
+-> whenever we are writing static imprt it is not require to used class name to access static members 
+and we can access directlly 
+
+
+------------** Packages 
+->it is encapsulation maschisom A group related claess and inteface into a singal Unit , which is nothing but Package
+ex.
+1. All classes and interface which are require for database operation are grouped into singal package which is nothing but java.sql package 
+2. All class and inteface which are usefull for file io operation or grouped into seperat package which is nothing but java.io package
+
+main purpose
+1. to resolve nameing confilicts (that is unique identifactin of our conpnent)
+2. modularity
+3.imporoved maintaibility of application
+4.it Security provides Security for our content 
+
+there is one universally accpet nameing convension for package that is to used internet domain name in reverse 
+com.icicbacnk.loan.housing.account 
+com.icicbacnk ->client internet domain name is reverse
+loan ->module name
+houseing -> submodule name 
+account -> class name 
+ 
+ package com.durgaSort.scjp;
+ public class Test{
+  public static void main(String args[]){
+    sout("pkg demo");
+  }
+ }
+ 1.javac Test.java 
+    genereted dot class file will be current working dirctory in the test.class 
+2. javac -d . Test.java
+ (-d) destination to place genereted got class file 
+ (.) dot mins current working dirctory
+
+    genereted dot class file will be place in Corressponding package structure 
+
+1. if Corressponding package structure not already aviable then this(javac -d . Test.java) command itself will create Corressponding package structure 
+
+2.as destination insted of dot we can take any valid dirctory name 
+ ex. javac -d F: test.java ;
+
+3. if the specified dirctory not aviable then we will get compli time error 
+javac -d Z: Test.java then we will get compil time saying dirctory not fund z: 
+
+
+in any java source file there can be at most one package statement that is more then one statement is not allowd otherwise we will get compile time error 
+
+package com1;
+package com2;
+
+public class cmd {
+  
+  public static void main(String[] args) {
+    // Your code here
+  }
+}
+// error: class, interface, enum, or record expected
+package com2;
+
+Consulusion 1:
+  what is defferent between packge and import
+  ->Using package, you can create a group of related classes, whereas import allows you to use classes from other packages.
+
+
+import java.util.*;
+package com1;
+
+public class cmd {
+  
+  public static void main(String[] args) {
+    // Your code here
+  }
+}
+//cmd.java:2: error: class, interface, enum, or record expected
+package com1;
+
+in any java program the first non statement should be packge statement (if it aviable) otherwise we will get complie time error 
+
+valid java Soucre file structure
+1.packge statement;  //atmost one
+2.import statement;  // any number 
+3.class/interface/enum declartion // any number
+
+order follwing as it is sequence
+
+Note : an empty Soucre file is valid java program hence the following are valid java Soucre file 
+
+
+1.  Test.java       // file name assume empty file 
+
+2. package pack1;  
+  Test.java
+
+3. import java.util.*;
+    Test.java
+
+4. package pack1;
+  import java.util.*;
+  Test.java
+
+5. class Test{
+
+  }
+  Test.java 
+
+
+**Class Level modifire
+whenever we are writing our own classes we have to provide some information about our class to the JVM 
+like 
+1. weather this class can be accessable form any wehere or not
+2. weather child class creation is possible or not
+3. weather object create is possible or not 
+
+we can specific this information by using appropriate modifire 
+
+12 modifire name 
+public, private, Defalut, protected, 
+final, abstarct, static, synchronized
+native, strictfp, transient, volatile
+
+the only applicable modifire for top level classes are 
+public 
+Default
+final
+abstarct
+strictfp
+
+but for inner classes the applicable modifire are 
+are :
+public 
+Default
+final
+abstarct
+strictfp
+static 
+private 
+protected
+
+
+private class cmd {
+  // static int MAX_VALUE = 999;
+  public static void main(String[] args) {
+    // Your code here
+  }
+}
+//cmd.java:2: error: modifier private not allowed here
+private class cmd 
+        ^
+1 error
+
+
+Access specifire VS access Modifire
+public 
+private
+protected
+Default
+consider as specifire except these remains consider as modifire
+but this rule is applicable only for old language like c++ 
+but not in java 
+in java all are consider as modifire only  there is no word like specifire 
+private class test modifire not allow here
+package pack1;
+
+private class cmd {
+  // static int MAX_VALUE = 999;
+  public static void main(String[] args) {
+
+  }
+}
+
+class leve ->public defualt final static abstarct
+
+1.public classes ->
+  if a class decleare as public than we can access that class form anywhere.
+
+package pack1;
+public class A {
+  public void m1(){
+    System.out.println("Hii");
+  }
+}
+import pack1.A;
+
+public class B {
+  public static void main(String[] args) {
+    A c = new A();
+    c.m1();
+  }
+}
+
+project-root/
+├── pack1/
+│   └── cmd.java
+└── pubB.java
+
+
+if class A is not pubilc then while compiling B class we will get compile time error 
+
+2. Default classes -:>
+ if class declare as default then we can access that class only within the currect packge that is form outside packge we cant access 
+ hence default access also known as packge level access 
+ 
+
+ Final modifire -> final is modifier applicable for classess method and variables 
+ Final method ->
+ 
+    whatever method parent have by defualt aviable to the child through inheritance
+    if the child not satisfied with parent method implimentations 
+    then child is allow to refien that method basses on its requirment this process is called Overrinding
+if the parent class method as final then we con't override that method in the child cleass becasue its implimentations is final 
+
+class P {
+  public void prop() {
+    System.out.println("Gold");
+  }
+
+  public final void monay() {
+    System.out.println("money");
+  }
+}
+
+
+class C extends P{
+  public void monay(){//❌ connot overrdie fianl method
+    System.out.println("you can marry now ");
+  }
+}
+
+
+
+public class cmd{
+  public static void main(String[] args) {
+    C child = new C();
+    child.prop();
+    child.monay();
+    child.marry();
+  }
+}
+
+
+-> final class :>
+  If a class is declared as final, it cannot be extended, meaning no subclasses can be created from it. In other words, inheritance is not possible for final classes.
+
+final class P{
+
+}
+class C extends P{ //❌ we cannot inherit from  final class 
+
+}
+
+
+**Note:-> 
+    every method present inside final class is always final by default but every variable prsent inside final need not be fianl 
+  ex.
+  final class p{
+    static int x =10;
+    public static void main(String args[]){
+      x=999;//✅
+      sout(x);
+    }
+  }
+
+Note:>
+The main advantage of using the final keyword is that it enhances security and allows for unique implementations. However, the primary disadvantage is that it prevents key benefits of OOP: inheritance (due to final classes) and polymorphism (due to final methods). Therefore, if there is no specific requirement, it is not recommended to use the final keyword.
+
+
+**Abstract Modifire :>
+1. abstarct is the modifier aplicable for classes and method but not for variable 
+
+what is abstarct method ->
+An abstract method is a method that is declared with the abstract modifier but does not have an implementation. This means that while the method is declared, its implementation is left to be provided by subclasses. Abstract methods are intended to be overridden by subclasses that extend the abstract class.
+
+The declaration of an abstract method ends with a semicolon (;), indicating that there is no implementation in the abstract class.
+An abstract method cannot have a body (implementation) in the class where it is declared.
+
+// Correct: Abstract method declaration
+public abstract void m1();
+
+// Incorrect: Abstract method with a body is not allowed
+public abstract void m1() {
+    // Implementation not allowed
+}
+
+
+child class responsbile to provide implimentations for parent class abstract method 
+
+abstract class Vechical{
+  abstract public int getNoOFwheel();
+
+}
+
+class Bus extends Vechical{
+  public int getNoOFwheel(){
+    return 7;//(6+1) stefiniy
+  }
+}
+class Auto extends Vechical {
+  public int getNoOFwheel(){
+    return 3;
+  }
+}
+
+public class cmd{
+  public static void main(String[] args) {
+ Auto auto = new Auto();
+ System.out.println(auto.getNoOFwheel());
+ Bus bus = new Bus();
+ System.out.println(bus.getNoOFwheel());
+  }
+}
+
+by declearing abstarct method in the parent we can provide guidelines to the child classes such that which method compulsary 
+child has to impliment

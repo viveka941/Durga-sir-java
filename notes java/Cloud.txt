@@ -1,0 +1,14 @@
+
+Cloud computing Benefits
+in simple words cloud computing enables on-demond services like compute, stroage, networking,etc
+
+Cloud Service Models 
+IaaS->infrastructrue providing 
+SaaS->
+PaaS->
+
+what is AWA?
+why AWS?
+const-effectiveness
+flexibility and openness
+elasticity and scalability

@@ -1,0 +1,13 @@
+what is PHP
+->programming language taht is used to build web paalication and wesites 
+->Php stand for HyperText Preprocessor 
+->Php is server-side scripting language
+->php is faster then other scripting language
+such as ASP and JSP
+
+script language
+->a programming language that is interpreted at 
+runtime rather then complid
+->Server side scripting language excute on server
+->client side Scripting language excepte on browser
+ 
